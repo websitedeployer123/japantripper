@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>45 Days in Japan — Sep–Oct 2026 Workation Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Syne:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@200;300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQPDd1bFYGt0GtnhJdpoBVoqI4ZCd7s=" crossorigin="">
 <style>
 :root {
   --void: #080808;
@@ -677,8 +676,6 @@ body {
 }
 .map-shell {
   position: relative;
-  height: min(72vh, 700px);
-  min-height: 620px;
   padding: 24px;
   border: 1px solid rgba(201,48,48,0.24);
   background:
@@ -713,67 +710,96 @@ body {
 .route-map {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 560px;
   border: 1px solid var(--border-light);
-  background: #111;
+  background:
+    radial-gradient(circle at 66% 18%, rgba(42,138,122,0.14), transparent 18%),
+    radial-gradient(circle at 45% 48%, rgba(201,48,48,0.12), transparent 24%),
+    linear-gradient(145deg, #101010, #060606);
   transition: box-shadow 0.35s ease;
   box-shadow: 0 28px 60px rgba(0,0,0,0.45);
   z-index: 1;
+  overflow: hidden;
 }
-.map-shell.is-flat .route-map {
-  box-shadow: none;
+.japan-route-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 520px;
 }
-.map-shell.is-flat::after {
-  opacity: 0;
+.map-sea { fill: #081016; }
+.map-land {
+  fill: #24201d;
+  stroke: rgba(232,224,212,0.38);
+  stroke-width: 1.4;
 }
-.map-toolbar {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  z-index: 650;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.map-land-glow {
+  fill: none;
+  stroke: rgba(201,48,48,0.18);
+  stroke-width: 9;
+  stroke-linejoin: round;
+  filter: blur(1px);
 }
-.map-toolbar button {
-  border: 1px solid rgba(232,224,212,0.16);
-  background: rgba(8,8,8,0.78);
-  color: var(--cream);
+.route-path-shadow {
+  fill: none;
+  stroke: rgba(0,0,0,0.72);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.route-path {
+  fill: none;
+  stroke: url(#routeGradient);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 10 8;
+}
+.route-flight {
+  fill: none;
+  stroke: rgba(232,224,212,0.55);
+  stroke-width: 2.5;
+  stroke-dasharray: 7 8;
+}
+.map-point circle {
+  stroke: #f8f1e6;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+}
+.map-point text {
+  fill: #fff;
   font-family: 'Syne', sans-serif;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  padding: 10px 13px;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-}
-.map-toolbar button:hover { border-color: var(--red); color: var(--red); }
-.route-marker {
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
-  border: 2px solid rgba(255,255,255,0.85);
-  box-shadow: 0 0 0 5px rgba(201,48,48,0.2), 0 8px 20px rgba(0,0,0,0.38);
+  text-anchor: middle;
+  dominant-baseline: middle;
 }
-.route-marker.phase-1 { background: var(--red); }
-.route-marker.phase-2 { background: var(--gold); }
-.route-marker.phase-3 { background: var(--purple); }
-.route-marker.phase-4 { background: var(--teal); }
-.route-marker.phase-5 { background: var(--green); }
-.route-popup {
+.map-label {
+  fill: var(--cream);
   font-family: 'Syne', sans-serif;
-  color: #1a1a1a;
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,0.86);
+  stroke-width: 4px;
+  stroke-linejoin: round;
 }
-.route-popup strong { display: block; font-size: 14px; color: #080808; margin-bottom: 3px; }
+.map-label.small {
+  fill: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.map-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 14px 16px 16px;
+  border-top: 1px solid rgba(232,224,212,0.08);
+  background: rgba(0,0,0,0.24);
+}
+.map-note strong { color: var(--cream); }
 .route-side {
   border: 1px solid var(--border);
   background: var(--card);
@@ -821,16 +847,6 @@ body {
   color: var(--muted);
   font-size: 12px;
 }
-.leaflet-container {
-  background: #101010;
-  font-family: 'Syne', sans-serif;
-}
-.leaflet-control-attribution {
-  background: rgba(8,8,8,0.7) !important;
-  color: rgba(232,224,212,0.6) !important;
-}
-.leaflet-control-attribution a { color: var(--gold) !important; }
-
 /* ─── FOOTER ─── */
 .footer {
   background: var(--void);
@@ -855,9 +871,8 @@ body {
   .overview-grid { grid-template-columns: 1fr; }
   .flow-step { grid-template-columns: 1fr; gap: 6px; }
   .route-stage { grid-template-columns: 1fr; }
-  .map-shell { height: 520px; min-height: 520px; padding: 12px; }
-  .route-map { height: 100%; min-height: 490px; }
-  .map-toolbar { top: 24px; left: 24px; right: 24px; }
+  .map-shell { padding: 12px; }
+  .japan-route-svg { min-height: 440px; }
 }
 
 /* ─── ANIMATION ─── */
@@ -968,11 +983,57 @@ body {
 
     <div class="route-stage">
       <div class="map-shell" id="mapShell">
-        <div class="map-toolbar">
-          <button type="button" id="toggleMapTilt">Toggle Scenic / Clean</button>
-          <button type="button" id="fitRoute">Fit Full Route</button>
+        <div class="route-map" aria-label="Japan trip route map">
+          <svg class="japan-route-svg" viewBox="0 0 860 620" role="img" aria-labelledby="routeMapTitle routeMapDesc">
+            <title id="routeMapTitle">45-day Japan route map</title>
+            <desc id="routeMapDesc">A visible static route map showing the trip from Tokyo to Tohoku, Kansai, Hiroshima, Shikoku, Ise, Tokyo and Hokkaido.</desc>
+            <defs>
+              <linearGradient id="routeGradient" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#c93030"/>
+                <stop offset="28%" stop-color="#c8962a"/>
+                <stop offset="52%" stop-color="#6b3fa0"/>
+                <stop offset="75%" stop-color="#2a8a7a"/>
+                <stop offset="100%" stop-color="#3a7a4a"/>
+              </linearGradient>
+            </defs>
+
+            <rect class="map-sea" x="0" y="0" width="860" height="620"/>
+            <path class="map-land-glow" d="M520 76 L548 94 L566 128 L552 164 L568 206 L556 250 L572 296 L552 334 L566 384 L548 428 L522 468 L486 504 L438 522 L392 514 L352 536 L310 526 L270 496 L236 456 L214 410 L194 362 L178 318 L162 272 L142 232 L118 198 L94 170 L72 140"/>
+            <path class="map-land" d="M510 68 C538 70 566 100 574 134 C582 168 560 186 572 218 C584 250 570 280 580 306 C592 340 568 360 570 392 C572 430 530 472 492 498 C454 524 420 520 392 536 C362 554 316 530 284 504 C250 476 228 430 208 386 C190 346 178 306 158 264 C140 226 112 194 84 170 C62 150 54 132 68 116 C90 92 124 110 150 136 C182 166 204 210 220 254 C240 304 246 352 272 398 C298 444 334 474 380 486 C428 498 470 478 502 440 C532 404 548 360 540 316 C532 270 520 238 528 198 C536 158 498 116 510 68 Z"/>
+            <path class="map-land" d="M606 84 C640 92 672 120 686 154 C700 190 682 226 652 244 C626 260 594 246 586 214 C578 184 594 152 588 124 C584 100 590 86 606 84 Z"/>
+            <path class="map-land" d="M470 548 C500 548 528 562 540 588 C510 606 470 606 434 590 C440 566 450 552 470 548 Z"/>
+            <path class="map-land" d="M200 474 C230 486 248 516 236 546 C202 544 174 522 164 494 C172 478 184 470 200 474 Z"/>
+            <path class="map-land" d="M138 410 C164 414 184 438 182 466 C150 470 120 452 106 424 C112 414 124 408 138 410 Z"/>
+
+            <path class="route-path-shadow" d="M550 332 L520 332 L484 298 L454 252 L468 204 L486 158 L520 116 L556 164 L486 298 L418 382 L352 392 L296 416 L244 456 L206 430 L270 382 L352 392 L430 444 L520 332"/>
+            <path class="route-path" d="M550 332 L520 332 L484 298 L454 252 L468 204 L486 158 L520 116 L556 164 L486 298 L418 382 L352 392 L296 416 L244 456 L206 430 L270 382 L352 392 L430 444 L520 332"/>
+            <path class="route-flight" d="M520 332 C612 282 646 196 620 108"/>
+            <path class="route-flight" d="M620 108 C650 180 612 270 520 332"/>
+
+            <text class="map-label small" x="66" y="70">schematic route map</text>
+            <text class="map-label" x="574" y="352">Tokyo</text>
+            <text class="map-label" x="474" y="307">Hakone</text>
+            <text class="map-label" x="488" y="252">Nikko</text>
+            <text class="map-label" x="500" y="165">Tohoku</text>
+            <text class="map-label" x="628" y="112">Hokkaido</text>
+            <text class="map-label" x="382" y="374">Kyoto / Osaka</text>
+            <text class="map-label" x="262" y="408">Hiroshima</text>
+            <text class="map-label" x="170" y="432">Shikoku</text>
+            <text class="map-label" x="366" y="456">Ise</text>
+
+            <g class="map-point"><circle cx="550" cy="332" r="15" fill="#c93030"/><text x="550" y="332">1</text></g>
+            <g class="map-point"><circle cx="484" cy="298" r="13" fill="#c93030"/><text x="484" y="298">2</text></g>
+            <g class="map-point"><circle cx="468" cy="204" r="13" fill="#c8962a"/><text x="468" y="204">3</text></g>
+            <g class="map-point"><circle cx="520" cy="116" r="13" fill="#c8962a"/><text x="520" y="116">4</text></g>
+            <g class="map-point"><circle cx="418" cy="382" r="14" fill="#6b3fa0"/><text x="418" y="382">5</text></g>
+            <g class="map-point"><circle cx="352" cy="392" r="13" fill="#6b3fa0"/><text x="352" y="392">6</text></g>
+            <g class="map-point"><circle cx="296" cy="416" r="13" fill="#2a8a7a"/><text x="296" y="416">7</text></g>
+            <g class="map-point"><circle cx="206" cy="430" r="13" fill="#2a8a7a"/><text x="206" y="430">8</text></g>
+            <g class="map-point"><circle cx="270" cy="382" r="13" fill="#2a8a7a"/><text x="270" y="382">9</text></g>
+            <g class="map-point"><circle cx="620" cy="108" r="15" fill="#3a7a4a"/><text x="620" y="108">10</text></g>
+          </svg>
+          <div class="map-note"><strong>Legend:</strong> 1 Tokyo, 2 Hakone, 3 Nikko, 4 Tohoku, 5 Kyoto/Osaka, 6 Kōya-san, 7 Hiroshima/Miyajima, 8 Shikoku/Naruto, 9 Ise, 10 Hokkaido. This is a reliable schematic map, not a failing live tile map.</div>
         </div>
-        <div id="japanRouteMap" class="route-map" aria-label="Interactive Japan trip route map"></div>
       </div>
 
       <aside class="route-side">
@@ -2284,122 +2345,5 @@ body {
   <p style="margin-top: 8px; color: rgba(255,255,255,0.2);">Naruto × JJK × Nature × Food × JDM</p>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-const routeStops = [
-  { n: 1, phase: 1, name: 'Narita / Tokyo Arrival', days: 'Day 1 · Tue Sep 15', coords: [35.7767, 140.3189] },
-  { n: 2, phase: 1, name: 'Tokyo Core', days: 'Days 2–7 · Sep 16–21', coords: [35.6762, 139.6503] },
-  { n: 3, phase: 1, name: 'Odaiba Heliport', days: 'Day 4 · Fri Sep 18', coords: [35.6259, 139.7757] },
-  { n: 4, phase: 1, name: 'Hakone Turnpike / Lake Ashi', days: 'Days 8–9 · Sep 22–23', coords: [35.2324, 139.1069] },
-  { n: 5, phase: 1, name: 'Shibuya / Nujabes Trail', days: 'Day 10 · Thu Sep 24', coords: [35.6595, 139.7005] },
-  { n: 6, phase: 2, name: 'Nikko', days: 'Day 11 · Fri Sep 25', coords: [36.7581, 139.5986] },
-  { n: 7, phase: 2, name: 'Ginzan Onsen / Yamadera', days: 'Day 12 · Sat Sep 26', coords: [38.5686, 140.5312] },
-  { n: 8, phase: 2, name: 'Sendai', days: 'Day 13 · Sun Sep 27', coords: [38.2682, 140.8694] },
-  { n: 9, phase: 2, name: 'Matsushima / Naruko Onsen', days: 'Day 14 · Mon Sep 28', coords: [38.3704, 141.0610] },
-  { n: 10, phase: 2, name: 'Jigokudani / Karuizawa', days: 'Days 15–18 · Sep 29–Oct 2', coords: [36.7320, 138.4620] },
-  { n: 11, phase: 3, name: 'Kyoto', days: 'Days 19–24 · Oct 3–8', coords: [35.0116, 135.7681] },
-  { n: 12, phase: 3, name: 'Nara / Yoshino', days: 'Day 25 · Fri Oct 9', coords: [34.6851, 135.8048] },
-  { n: 13, phase: 3, name: 'Osaka', days: 'Days 26–28 · Oct 10–12', coords: [34.6937, 135.5023] },
-  { n: 14, phase: 3, name: 'Koya-san', days: 'Days 29–30 · Oct 13–14', coords: [34.2120, 135.5860] },
-  { n: 15, phase: 4, name: 'Hiroshima', days: 'Day 31 · Thu Oct 15', coords: [34.3853, 132.4553] },
-  { n: 16, phase: 4, name: 'Miyajima', days: 'Day 32 · Fri Oct 16', coords: [34.2950, 132.3190] },
-  { n: 17, phase: 4, name: 'Matsuyama', days: 'Day 33 · Sat Oct 17', coords: [33.8390, 132.7650] },
-  { n: 18, phase: 4, name: 'Naruto City', days: 'Day 34 · Sun Oct 18 · Race pivot', coords: [34.1726, 134.6080] },
-  { n: 19, phase: 4, name: 'Ise Grand Shrine', days: 'Day 35 · Mon Oct 19', coords: [34.4875, 136.7093] },
-  { n: 20, phase: 4, name: 'Return to Tokyo', days: 'Days 36–38 · Oct 20–22', coords: [35.6762, 139.6503] },
-  { n: 21, phase: 5, name: 'Sapporo', days: 'Day 39 · Fri Oct 23', coords: [43.0618, 141.3545] },
-  { n: 22, phase: 5, name: 'Daisetsuzan / Asahikawa', days: 'Days 40–41 · Oct 24–25', coords: [43.6630, 142.8540] },
-  { n: 23, phase: 5, name: 'Lake Toya / Noboribetsu', days: 'Days 42–43 · Oct 26–27', coords: [42.6000, 140.8500] },
-  { n: 24, phase: 5, name: 'Otaru', days: 'Day 44 · Wed Oct 28', coords: [43.1907, 140.9947] },
-  { n: 25, phase: 5, name: 'Sapporo Departure', days: 'Day 45 · Thu Oct 29', coords: [43.0618, 141.3545] }
-];
-
-const phaseColors = {
-  1: '#c93030',
-  2: '#c8962a',
-  3: '#6b3fa0',
-  4: '#2a8a7a',
-  5: '#3a7a4a'
-};
-
-function initJapanRouteMap() {
-  const mapEl = document.getElementById('japanRouteMap');
-  if (!mapEl || typeof L === 'undefined') return;
-
-  const map = L.map(mapEl, {
-    zoomControl: true,
-    scrollWheelZoom: false,
-    fadeAnimation: false,
-    zoomAnimation: false,
-    preferCanvas: true
-  }).setView([37.5, 138.2], 5);
-
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  const allCoords = routeStops.map(stop => stop.coords);
-  L.polyline(allCoords, {
-    color: '#e8e0d4',
-    weight: 2,
-    opacity: 0.25,
-    dashArray: '6 9'
-  }).addTo(map);
-
-  [1, 2, 3, 4, 5].forEach(phase => {
-    const phaseCoords = routeStops.filter(stop => stop.phase === phase).map(stop => stop.coords);
-    L.polyline(phaseCoords, {
-      color: phaseColors[phase],
-      weight: 4,
-      opacity: 0.88,
-      lineCap: 'round',
-      lineJoin: 'round'
-    }).addTo(map);
-  });
-
-  routeStops.forEach(stop => {
-    const icon = L.divIcon({
-      className: '',
-      html: `<span class="route-marker phase-${stop.phase}">${stop.n}</span>`,
-      iconSize: [24, 24],
-      iconAnchor: [12, 12]
-    });
-
-    L.marker(stop.coords, { icon })
-      .addTo(map)
-      .bindPopup(`<div class="route-popup"><strong>${stop.n}. ${stop.name}</strong>${stop.days}</div>`);
-  });
-
-  const bounds = L.latLngBounds(allCoords);
-  const fitRoute = () => {
-    map.invalidateSize(true);
-    map.fitBounds(bounds, { padding: [34, 34] });
-  };
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(fitRoute);
-  });
-
-  const shell = document.getElementById('mapShell');
-  document.getElementById('toggleMapTilt')?.addEventListener('click', () => {
-    shell?.classList.toggle('is-flat');
-    setTimeout(fitRoute, 120);
-  });
-
-  document.getElementById('fitRoute')?.addEventListener('click', () => {
-    fitRoute();
-  });
-
-  setTimeout(fitRoute, 300);
-  setTimeout(fitRoute, 1000);
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initJapanRouteMap);
-} else {
-  initJapanRouteMap();
-}
-</script>
 </body>
 </html>
