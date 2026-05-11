@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>45 Days in Japan — Sep–Oct Workation Guide</title>
+<title>45 Days in Japan — Sep–Oct 2026 Workation Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Syne:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@200;300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQPDd1bFYGt0GtnhJdpoBVoqI4ZCd7s=" crossorigin="">
 <style>
 :root {
   --void: #080808;
@@ -13,8 +14,8 @@
   --card: #1a1a1a;
   --border: #2a2a2a;
   --border-light: #333;
-  --text: #e8e0d4;
-  --muted: #6b6560;
+  --text: #f1eadf;
+  --muted: #aea59a;
   --faint: #2e2a26;
   --red: #c93030;
   --red-glow: rgba(201,48,48,0.15);
@@ -35,8 +36,8 @@ body {
   background: var(--void);
   color: var(--text);
   font-family: 'Syne', sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
@@ -235,7 +236,7 @@ body {
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
 /* ─── SECTION ─── */
-.section { padding: 80px 0; }
+.section { padding: 88px 0; }
 .section + .section { border-top: 1px solid var(--border); }
 
 .sec-header {
@@ -275,11 +276,11 @@ body {
 }
 
 .sec-titles .sec-sub {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   margin-top: 8px;
-  max-width: 600px;
-  line-height: 1.8;
+  max-width: 720px;
+  line-height: 1.85;
 }
 
 /* ─── PHASE BANNER ─── */
@@ -383,7 +384,7 @@ body {
 
 .day-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--cream); line-height: 1.2; }
 
-.day-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
+.day-desc { font-size: 14.5px; color: var(--muted); line-height: 1.85; }
 
 .day-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
 .dtag {
@@ -442,7 +443,7 @@ body {
 .big-card.purple .bc-when { color: var(--purple); }
 
 .bc-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--cream); margin-bottom: 12px; line-height: 1.2; }
-.bc-desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
+.bc-desc { font-size: 14px; color: var(--muted); line-height: 1.85; }
 .bc-where { margin-top: 16px; font-size: 11px; color: rgba(232,224,212,0.35); display: flex; align-items: center; gap: 6px; }
 
 /* ─── FOOD SECTION ─── */
@@ -461,7 +462,7 @@ body {
 .fc-cat { font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
 .fc-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
 .fc-jp { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--muted); margin-bottom: 10px; letter-spacing: 0.1em; }
-.fc-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.fc-desc { font-size: 14px; color: var(--muted); line-height: 1.8; }
 .fc-where { margin-top: 12px; font-size: 10px; color: var(--red); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
 .fc-reco { margin-top: 8px; font-size: 12px; color: rgba(232,224,212,0.4); font-style: italic; }
 
@@ -482,7 +483,7 @@ body {
 .photo-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; color: rgba(255,255,255,0.05); line-height: 1; margin-bottom: 8px; }
 .photo-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
 .photo-loc { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; font-weight: 600; }
-.photo-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.photo-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
 .photo-tip { margin-top: 10px; font-size: 11px; color: var(--gold); font-style: italic; }
 
 /* ─── ANIME SECTION ─── */
@@ -527,7 +528,7 @@ body {
 .nc-season { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; font-weight: 600; }
 .nc-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
 .nc-loc { font-size: 10px; letter-spacing: 0.15em; color: var(--red); text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
-.nc-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.nc-desc { font-size: 14px; color: var(--muted); line-height: 1.8; }
 .nc-timing { margin-top: 12px; font-size: 11px; color: var(--gold); }
 
 /* ─── TIPS BOX ─── */
@@ -575,7 +576,7 @@ body {
 
 .wc-week { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
 .wc-city { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
-.wc-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.wc-desc { font-size: 14px; color: var(--muted); line-height: 1.8; }
 .wc-spots { margin-top: 12px; font-size: 12px; color: rgba(232,224,212,0.4); }
 .wc-spots strong { color: var(--gold); }
 
@@ -612,6 +613,225 @@ body {
 .budget-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 2px; }
 .budget-scroll .budget-table { min-width: 720px; }
 
+/* ─── SIMPLE OVERVIEW ─── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.overview-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+.overview-card strong {
+  display: block;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.overview-card span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.overview-flow {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(201,48,48,0.08), rgba(232,224,212,0.03));
+}
+.flow-step {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(232,224,212,0.08);
+}
+.flow-step:first-child { border-top: 0; padding-top: 0; }
+.flow-step:last-child { padding-bottom: 0; }
+.flow-date {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.flow-text {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.flow-text strong { color: var(--cream); }
+
+/* ─── ROUTE MAP ─── */
+.route-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 28px;
+  align-items: stretch;
+}
+.map-shell {
+  position: relative;
+  height: min(72vh, 700px);
+  min-height: 620px;
+  border: 1px solid rgba(201,48,48,0.24);
+  background:
+    radial-gradient(circle at 20% 12%, rgba(201,48,48,0.18), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(42,138,122,0.14), transparent 30%),
+    linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  overflow: hidden;
+  box-shadow: 0 34px 90px rgba(0,0,0,0.52);
+}
+.map-shell::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(232,224,212,0.08);
+  pointer-events: none;
+  z-index: 500;
+}
+.map-shell::after {
+  content: '';
+  position: absolute;
+  left: 52px;
+  right: 28px;
+  bottom: 12px;
+  height: 34px;
+  background: linear-gradient(90deg, rgba(201,48,48,0.28), rgba(42,138,122,0.22), rgba(58,122,74,0.22));
+  filter: blur(20px);
+  opacity: 0.82;
+  transform: skewX(-18deg);
+  pointer-events: none;
+  z-index: 0;
+}
+.route-map {
+  position: absolute;
+  inset: 24px;
+  height: calc(100% - 48px);
+  min-height: 0;
+  border: 1px solid var(--border-light);
+  background: #111;
+  transition: filter 0.35s ease, box-shadow 0.35s ease;
+  filter: saturate(0.92) contrast(1.08) brightness(0.78);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+  z-index: 1;
+}
+.map-shell.is-flat .route-map {
+  filter: none;
+  box-shadow: none;
+}
+.map-shell.is-flat::after {
+  opacity: 0;
+}
+.map-toolbar {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 650;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.map-toolbar button {
+  border: 1px solid rgba(232,224,212,0.16);
+  background: rgba(8,8,8,0.78);
+  color: var(--cream);
+  font-family: 'Syne', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+.map-toolbar button:hover { border-color: var(--red); color: var(--red); }
+.route-marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  border: 2px solid rgba(255,255,255,0.85);
+  box-shadow: 0 0 0 5px rgba(201,48,48,0.2), 0 8px 20px rgba(0,0,0,0.38);
+}
+.route-marker.phase-1 { background: var(--red); }
+.route-marker.phase-2 { background: var(--gold); }
+.route-marker.phase-3 { background: var(--purple); }
+.route-marker.phase-4 { background: var(--teal); }
+.route-marker.phase-5 { background: var(--green); }
+.route-popup {
+  font-family: 'Syne', sans-serif;
+  color: #1a1a1a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.route-popup strong { display: block; font-size: 14px; color: #080808; margin-bottom: 3px; }
+.route-side {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 24px;
+}
+.route-side h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+.route-side p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.route-leg {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+.route-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-top: 7px;
+}
+.route-dot.red { background: var(--red); }
+.route-dot.gold { background: var(--gold); }
+.route-dot.purple { background: var(--purple); }
+.route-dot.teal { background: var(--teal); }
+.route-dot.green { background: var(--green); }
+.route-leg strong {
+  display: block;
+  color: var(--cream);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.route-leg span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+.leaflet-container {
+  background: #101010;
+  font-family: 'Syne', sans-serif;
+}
+.leaflet-control-attribution {
+  background: rgba(8,8,8,0.7) !important;
+  color: rgba(232,224,212,0.6) !important;
+}
+.leaflet-control-attribution a { color: var(--gold) !important; }
+
 /* ─── FOOTER ─── */
 .footer {
   background: var(--void);
@@ -633,6 +853,12 @@ body {
   .sec-header { grid-template-columns: 1fr; }
   .sec-num { display: none; }
   .tips-box { padding: 28px 20px; }
+  .overview-grid { grid-template-columns: 1fr; }
+  .flow-step { grid-template-columns: 1fr; gap: 6px; }
+  .route-stage { grid-template-columns: 1fr; }
+  .map-shell { height: 520px; min-height: 520px; }
+  .route-map { inset: 12px; height: calc(100% - 24px); }
+  .map-toolbar { top: 24px; left: 24px; right: 24px; }
 }
 
 /* ─── ANIMATION ─── */
@@ -653,17 +879,18 @@ body {
   <div class="hero-radial"></div>
   <div class="hero-jp-bg">日本旅行</div>
   <div class="hero-content">
-    <div class="hero-kicker">The Complete Workation Guide · 2025</div>
+    <div class="hero-kicker">The Complete Workation Guide · 2026</div>
     <h1 class="hero-title">
       45 Days
       <span class="line2">in Japan</span>
     </h1>
-    <p class="hero-dates">Mid September — End of October &nbsp;·&nbsp; 日本への旅</p>
+    <p class="hero-dates">Tue Sep 15 — Thu Oct 29, 2026 &nbsp;·&nbsp; 日本への旅</p>
     <div class="hero-pills">
       <span class="pill pill-red">🍁 Peak Autumn Foliage</span>
       <span class="pill pill-purple">🍥 Naruto &amp; JJK</span>
       <span class="pill pill-gold">🚗 GTR / RX-7 Day</span>
       <span class="pill pill-teal">🚁 Helicopter Tokyo</span>
+      <span class="pill pill-red">🏃 Tokyo Legacy Half</span>
       <span class="pill pill-cream">💻 Workation</span>
       <span class="pill pill-cream">🏔️ Nature First</span>
       <span class="pill pill-gold">🎵 Nujabes Trail</span>
@@ -680,6 +907,8 @@ body {
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav class="sticky-nav">
   <div class="nav-inner">
+    <a class="nav-item" href="#overview">Overview</a>
+    <a class="nav-item" href="#route">Route Map</a>
     <a class="nav-item" href="#itinerary">Itinerary</a>
     <a class="nav-item" href="#big">Big Experiences</a>
     <a class="nav-item" href="#anime">Naruto &amp; JJK</a>
@@ -694,6 +923,74 @@ body {
 </nav>
 
 
+<!-- ═══════════════ SIMPLE OVERVIEW ═══════════════ -->
+<section class="section" id="overview">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-num">00</div>
+      <div class="sec-titles">
+        <span class="sec-label">Short Version · 2026 Calendar Anchor</span>
+        <h2>The Trip<br>in Plain English</h2>
+        <p class="sec-sub">A 45-day Japan workation from <strong>Tuesday Sep 15 to Thursday Oct 29, 2026</strong>. The plan mixes anime/Nujabes pilgrimages, major food days, autumn nature, a few high-ticket experiences, and enough work blocks to keep the trip realistic.</p>
+      </div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="overview-card"><strong>Start Big in Tokyo</strong><span>Arrive, recover, explore Shibuya/Akihabara/Odaiba, do the helicopter flight, eat omakase, and take the GT-R/RX-7 drive into Hakone.</span></div>
+      <div class="overview-card"><strong>Go North for Wild Japan</strong><span>Nikko, Ginzan Onsen, Sendai, Matsushima, Naruko Gorge and the snow monkeys give the trip its mountain/onsen spine.</span></div>
+      <div class="overview-card"><strong>Then Culture + Food</strong><span>Kyoto, Nara, Osaka and Kōya-san carry the temples, sword class, street food, kaiseki, JJK/Naruto energy and night photography.</span></div>
+      <div class="overview-card"><strong>Westward Pilgrimage</strong><span>Hiroshima and Miyajima slow the pace down, then Shikoku adds Dōgo Onsen and Naruto whirlpools before returning through Ise.</span></div>
+      <div class="overview-card"><strong>Finish in Hokkaido</strong><span>Sapporo, Daisetsuzan, Asahikawa, Lake Tōya, Noboribetsu and Otaru close the trip with seafood, volcanoes and autumn landscapes.</span></div>
+      <div class="overview-card"><strong>Optional Race Pivot</strong><span>If we get Tokyo Legacy Half Marathon 2026 entry, keep Sunday Oct 18 flexible and reroute the Shikoku/Ise stretch around Tokyo.</span></div>
+    </div>
+
+    <div class="overview-flow">
+      <div class="flow-step"><div class="flow-date">Sep 15–24</div><div class="flow-text"><strong>Tokyo + Hakone:</strong> orientation, anime districts, helicopter, omakase, JDM mountain road day, Lake Ashi and Nujabes stops.</div></div>
+      <div class="flow-step"><div class="flow-date">Sep 25–Oct 2</div><div class="flow-text"><strong>Tohoku + Alps:</strong> ornate shrines, onsen towns, Sendai work base, Matsushima Bay, Naruko Gorge and Jigokudani/Karuizawa.</div></div>
+      <div class="flow-step"><div class="flow-date">Oct 3–14</div><div class="flow-text"><strong>Kyoto, Nara + Osaka:</strong> Fushimi Inari at dawn, Arashiyama, sword class, Nara deer, Osaka food and Kōya-san temple lodging.</div></div>
+      <div class="flow-step"><div class="flow-date">Oct 15–22</div><div class="flow-text"><strong>Hiroshima, Shikoku + Ise:</strong> Peace Memorial, Miyajima sunrise, Dōgo Onsen, Naruto whirlpools, Ise Grand Shrine and return toward Tokyo.</div></div>
+      <div class="flow-step"><div class="flow-date">Oct 23–29</div><div class="flow-text"><strong>Hokkaido finish:</strong> Sapporo ramen/seafood, Daisetsuzan, volcanic lake country, Noboribetsu onsen and Otaru canal.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ ROUTE MAP ═══════════════ -->
+<section class="section" id="route">
+  <div class="wrap">
+    <div class="sec-header">
+      <div class="sec-num">00</div>
+      <div class="sec-titles">
+        <span class="sec-label">Interactive Route · OpenStreetMap · 3D-Styled Frame</span>
+        <h2>How You Move<br>Across Japan</h2>
+        <p class="sec-sub">A north-to-south-to-north arc for Sep 15–Oct 29, 2026: Tokyo immersion, mountain and onsen detours, Kyoto/Osaka culture, Hiroshima/Shikoku/Ise, then a final flight to Hokkaido for wild autumn landscapes.</p>
+      </div>
+    </div>
+
+    <div class="route-stage">
+      <div class="map-shell" id="mapShell">
+        <div class="map-toolbar">
+          <button type="button" id="toggleMapTilt">Toggle Scenic / Clean</button>
+          <button type="button" id="fitRoute">Fit Full Route</button>
+        </div>
+        <div id="japanRouteMap" class="route-map" aria-label="Interactive Japan trip route map"></div>
+      </div>
+
+      <aside class="route-side">
+        <h3>Route Spine</h3>
+        <p>Numbered pins follow the itinerary order and 2026 date ranges. The line is not exact rail routing, but it shows the trip's movement pattern and how the big regions connect.</p>
+
+        <div class="route-leg"><span class="route-dot red"></span><div><strong>Phase 1 · Tokyo + Hakone</strong><span>Narita, Tokyo districts, Odaiba, Hakone Turnpike, Lake Ashi.</span></div></div>
+        <div class="route-leg"><span class="route-dot gold"></span><div><strong>Phase 2 · Tohoku + Alps</strong><span>Nikko, Ginzan Onsen, Sendai, Matsushima/Naruko, Jigokudani/Karuizawa.</span></div></div>
+        <div class="route-leg"><span class="route-dot purple"></span><div><strong>Phase 3 · Kansai</strong><span>Kyoto, Uji, Arashiyama, Nara, Osaka, Kōya-san.</span></div></div>
+        <div class="route-leg"><span class="route-dot teal"></span><div><strong>Phase 4 · West + Shikoku</strong><span>Hiroshima, Miyajima, Matsuyama, Naruto, Ise, back to Tokyo.</span></div></div>
+        <div class="route-leg"><span class="route-dot green"></span><div><strong>Phase 5 · Hokkaido</strong><span>Sapporo, Daisetsuzan/Asahikawa, Lake Tōya, Noboribetsu, Otaru.</span></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
 <!-- ═══════════════ ITINERARY ═══════════════ -->
 <section class="section" id="itinerary">
   <div class="wrap">
@@ -702,14 +999,14 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Day by Day</span>
         <h2>Full 45-Day<br>Itinerary</h2>
-        <p class="sec-sub">Mid-September to end of October — timed perfectly for autumn foliage that starts in Hokkaido and sweeps south. Work days carved out mid-week. Big experiences scattered to keep the pace electric.</p>
+        <p class="sec-sub">Tuesday Sep 15 to Thursday Oct 29, 2026 — timed for autumn foliage that starts in Hokkaido and sweeps south. Work days, big experiences and long transfers are spread out so the trip remains realistic.</p>
       </div>
     </div>
 
     <!-- PHASE 1 -->
     <div class="phase-banner">
       <div>
-        <div class="pb-label">Phase 1 · Days 1–10</div>
+        <div class="pb-label">Phase 1 · Days 1–10 · Sep 15–24, 2026</div>
         <div class="pb-title">Tokyo — Megacity Immersion</div>
         <div class="pb-sub">Anime districts, fine dining, helicopter views, JDM cars, sumo — learn the rhythm of the world's greatest city.</div>
       </div>
@@ -821,7 +1118,7 @@ body {
     <!-- PHASE 2 -->
     <div class="phase-banner gold-accent">
       <div>
-        <div class="pb-label">Phase 2 · Days 11–18</div>
+        <div class="pb-label">Phase 2 · Days 11–18 · Sep 25–Oct 2, 2026</div>
         <div class="pb-title">Tohoku &amp; Japanese Alps — Wild Japan</div>
         <div class="pb-sub">Snow monkey valleys, Spirited Away onsen towns, sacred mountains, dramatic gorges — the Japan tourists miss.</div>
       </div>
@@ -883,7 +1180,7 @@ body {
     <!-- PHASE 3 -->
     <div class="phase-banner teal-accent">
       <div>
-        <div class="pb-label">Phase 3 · Days 19–30</div>
+        <div class="pb-label">Phase 3 · Days 19–30 · Oct 3–14, 2026</div>
         <div class="pb-title">Kyoto, Nara &amp; Osaka — The Cultural Heart</div>
         <div class="pb-sub">Ancient capitals, geisha districts, deer parks, samurai experiences, JJK filming locations, Dotonbori madness and the best food in the world.</div>
       </div>
@@ -1005,7 +1302,7 @@ body {
     <!-- PHASE 4 -->
     <div class="phase-banner purple-accent">
       <div>
-        <div class="pb-label">Phase 4 · Days 31–38</div>
+        <div class="pb-label">Phase 4 · Days 31–38 · Oct 15–22, 2026</div>
         <div class="pb-title">Hiroshima, Miyajima, Shikoku &amp; Ise</div>
         <div class="pb-sub">Floating torii gates, pilgrimage trails, ancient shrines, Naruto whirlpools and Japan's most moving memorial.</div>
       </div>
@@ -1048,8 +1345,8 @@ body {
         <div class="day-body">
           <div class="day-city">Naruto City, Tokushima</div>
           <div class="day-title">Naruto Whirlpools — The City That Shares the Name</div>
-          <div class="day-desc"><strong>Naruto, Tokushima</strong> — the actual city that inspired the whirlpool symbolism in Naruto (and the "Naruto Uzumaki" spirals are literally based on the naruto fish-cake swirl pattern). Take a <strong>sightseeing boat under the Ōnaruto Bridge</strong> to watch the giant tidal whirlpools — up to 20m across during spring tides. The Onaruto Bridge glass walkway over the whirlpools is spectacular. Pick up naruto-themed local merchandise and ramen here. A quirky, unexpected stop that Naruto fans will treasure.</div>
-          <div class="day-tags"><span class="dtag p">Naruto Inspired</span><span class="dtag gr">Whirlpools</span><span class="dtag r">Photo Spot</span><span class="dtag">Local Gem</span></div>
+          <div class="day-desc"><strong>Naruto, Tokushima</strong> — the actual city that inspired the whirlpool symbolism in Naruto (and the "Naruto Uzumaki" spirals are literally based on the naruto fish-cake swirl pattern). Take a <strong>sightseeing boat under the Ōnaruto Bridge</strong> to watch the giant tidal whirlpools — up to 20m across during spring tides. The Onaruto Bridge glass walkway over the whirlpools is spectacular. <strong>2026 calendar note:</strong> this lands on Sunday Oct 18, the same date as Tokyo Legacy Half Marathon 2026. If we get race entry, this stop shifts and the weekend becomes Tokyo.</div>
+          <div class="day-tags"><span class="dtag p">Naruto Inspired</span><span class="dtag gr">Whirlpools</span><span class="dtag r">Photo Spot</span><span class="dtag">Local Gem</span><span class="dtag r">Half Marathon Pivot</span></div>
         </div>
       </div>
 
@@ -1077,7 +1374,7 @@ body {
     <!-- PHASE 5 -->
     <div class="phase-banner">
       <div>
-        <div class="pb-label">Phase 5 · Days 39–45</div>
+        <div class="pb-label">Phase 5 · Days 39–45 · Oct 23–29, 2026</div>
         <div class="pb-title">Hokkaido — Japan's Wild North</div>
         <div class="pb-sub">Late October in Hokkaido is peak autumn. Volcanic calderas, bear-watching, ramen that defines the genre, and Japan's most dramatic wilderness.</div>
       </div>
@@ -1216,6 +1513,14 @@ body {
         <div class="bc-title">Live King Crab at Nijo Fish Market</div>
         <div class="bc-desc">Sapporo's Nijo Market — pick a live hairy crab or king crab from the tank, watch it cooked, eat it at the counter. Combined with fresh uni (sea urchin) and Hokkaido scallops grilled on charcoal. This is the finest seafood in Japan and among the best anywhere in the world. Best in October when crab season is in full swing.</div>
         <div class="bc-where">📍 Nijo Market, Sapporo</div>
+      </div>
+
+      <div class="big-card purple">
+        <span class="bc-icon">🏃</span>
+        <div class="bc-when">Potential · Sun Oct 18, 2026 · Tokyo</div>
+        <div class="bc-title">Tokyo Legacy Half Marathon 2026</div>
+        <div class="bc-desc">If we secure entry, this becomes the major calendar pivot of the trip. The 2026 Tokyo Legacy Half Marathon is scheduled for <strong>Sunday, October 18, 2026</strong>, starting and finishing at the National Stadium. It would require keeping that weekend in Tokyo and rerouting the Hiroshima/Shikoku/Ise segment around the race. Entry is limited, so treat it as a ticket-dependent upgrade rather than a locked plan.</div>
+        <div class="bc-where">📍 National Stadium, Tokyo · 21.0975km · Entry-dependent</div>
       </div>
 
     </div>
@@ -1883,6 +2188,7 @@ body {
             <tr><td class="cat">Shibuya Sky rooftop</td><td class="amt">¥2,000–2,500</td><td>$13–$16</td><td>Book sunset entry for Day 2.</td></tr>
             <tr><td class="cat">Private Iaido sword class</td><td class="amt">¥8,000–20,000</td><td>$51–$127</td><td>Kyoto private dojo session.</td></tr>
             <tr><td class="cat">Local photographer experience</td><td class="amt">¥15,000–40,000</td><td>$96–$255</td><td>Best value in Kyoto, Tokyo night neon or Hokkaido autumn.</td></tr>
+            <tr><td class="cat">Tokyo Legacy Half Marathon 2026 entry</td><td class="amt">~¥19,200</td><td>~$122</td><td>Potential Sunday Oct 18 race if entry is secured; may require Tokyo reroute.</td></tr>
             <tr><td class="cat">Sumo tournament ticket</td><td class="amt">¥3,800–14,800</td><td>$24–$94</td><td>Depends on tournament timing and seat type.</td></tr>
             <tr><td class="cat">Fushimi Inari</td><td class="amt">Free</td><td>Free</td><td>Dawn visit is the real value.</td></tr>
             <tr><td class="cat">Tenjuan Temple garden</td><td class="amt">¥500</td><td>$3</td><td>Quiet Kyoto garden add-on.</td></tr>
@@ -1975,9 +2281,116 @@ body {
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer class="footer">
   <span class="footer-jp">良い旅を · よい旅を</span>
-  <p>Have a great journey · Sep–Oct 2025 · 45 Days · Japan</p>
+  <p>Have a great journey · Sep 15–Oct 29, 2026 · 45 Days · Japan</p>
   <p style="margin-top: 8px; color: rgba(255,255,255,0.2);">Naruto × JJK × Nature × Food × JDM</p>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+const routeStops = [
+  { n: 1, phase: 1, name: 'Narita / Tokyo Arrival', days: 'Day 1 · Tue Sep 15', coords: [35.7767, 140.3189] },
+  { n: 2, phase: 1, name: 'Tokyo Core', days: 'Days 2–7 · Sep 16–21', coords: [35.6762, 139.6503] },
+  { n: 3, phase: 1, name: 'Odaiba Heliport', days: 'Day 4 · Fri Sep 18', coords: [35.6259, 139.7757] },
+  { n: 4, phase: 1, name: 'Hakone Turnpike / Lake Ashi', days: 'Days 8–9 · Sep 22–23', coords: [35.2324, 139.1069] },
+  { n: 5, phase: 1, name: 'Shibuya / Nujabes Trail', days: 'Day 10 · Thu Sep 24', coords: [35.6595, 139.7005] },
+  { n: 6, phase: 2, name: 'Nikko', days: 'Day 11 · Fri Sep 25', coords: [36.7581, 139.5986] },
+  { n: 7, phase: 2, name: 'Ginzan Onsen / Yamadera', days: 'Day 12 · Sat Sep 26', coords: [38.5686, 140.5312] },
+  { n: 8, phase: 2, name: 'Sendai', days: 'Day 13 · Sun Sep 27', coords: [38.2682, 140.8694] },
+  { n: 9, phase: 2, name: 'Matsushima / Naruko Onsen', days: 'Day 14 · Mon Sep 28', coords: [38.3704, 141.0610] },
+  { n: 10, phase: 2, name: 'Jigokudani / Karuizawa', days: 'Days 15–18 · Sep 29–Oct 2', coords: [36.7320, 138.4620] },
+  { n: 11, phase: 3, name: 'Kyoto', days: 'Days 19–24 · Oct 3–8', coords: [35.0116, 135.7681] },
+  { n: 12, phase: 3, name: 'Nara / Yoshino', days: 'Day 25 · Fri Oct 9', coords: [34.6851, 135.8048] },
+  { n: 13, phase: 3, name: 'Osaka', days: 'Days 26–28 · Oct 10–12', coords: [34.6937, 135.5023] },
+  { n: 14, phase: 3, name: 'Koya-san', days: 'Days 29–30 · Oct 13–14', coords: [34.2120, 135.5860] },
+  { n: 15, phase: 4, name: 'Hiroshima', days: 'Day 31 · Thu Oct 15', coords: [34.3853, 132.4553] },
+  { n: 16, phase: 4, name: 'Miyajima', days: 'Day 32 · Fri Oct 16', coords: [34.2950, 132.3190] },
+  { n: 17, phase: 4, name: 'Matsuyama', days: 'Day 33 · Sat Oct 17', coords: [33.8390, 132.7650] },
+  { n: 18, phase: 4, name: 'Naruto City', days: 'Day 34 · Sun Oct 18 · Race pivot', coords: [34.1726, 134.6080] },
+  { n: 19, phase: 4, name: 'Ise Grand Shrine', days: 'Day 35 · Mon Oct 19', coords: [34.4875, 136.7093] },
+  { n: 20, phase: 4, name: 'Return to Tokyo', days: 'Days 36–38 · Oct 20–22', coords: [35.6762, 139.6503] },
+  { n: 21, phase: 5, name: 'Sapporo', days: 'Day 39 · Fri Oct 23', coords: [43.0618, 141.3545] },
+  { n: 22, phase: 5, name: 'Daisetsuzan / Asahikawa', days: 'Days 40–41 · Oct 24–25', coords: [43.6630, 142.8540] },
+  { n: 23, phase: 5, name: 'Lake Toya / Noboribetsu', days: 'Days 42–43 · Oct 26–27', coords: [42.6000, 140.8500] },
+  { n: 24, phase: 5, name: 'Otaru', days: 'Day 44 · Wed Oct 28', coords: [43.1907, 140.9947] },
+  { n: 25, phase: 5, name: 'Sapporo Departure', days: 'Day 45 · Thu Oct 29', coords: [43.0618, 141.3545] }
+];
+
+const phaseColors = {
+  1: '#c93030',
+  2: '#c8962a',
+  3: '#6b3fa0',
+  4: '#2a8a7a',
+  5: '#3a7a4a'
+};
+
+function initJapanRouteMap() {
+  const mapEl = document.getElementById('japanRouteMap');
+  if (!mapEl || typeof L === 'undefined') return;
+
+  const map = L.map(mapEl, {
+    zoomControl: true,
+    scrollWheelZoom: false,
+    preferCanvas: true
+  }).setView([37.5, 138.2], 5);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  const allCoords = routeStops.map(stop => stop.coords);
+  L.polyline(allCoords, {
+    color: '#e8e0d4',
+    weight: 2,
+    opacity: 0.25,
+    dashArray: '6 9'
+  }).addTo(map);
+
+  [1, 2, 3, 4, 5].forEach(phase => {
+    const phaseCoords = routeStops.filter(stop => stop.phase === phase).map(stop => stop.coords);
+    L.polyline(phaseCoords, {
+      color: phaseColors[phase],
+      weight: 4,
+      opacity: 0.88,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(map);
+  });
+
+  routeStops.forEach(stop => {
+    const icon = L.divIcon({
+      className: '',
+      html: `<span class="route-marker phase-${stop.phase}">${stop.n}</span>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+
+    L.marker(stop.coords, { icon })
+      .addTo(map)
+      .bindPopup(`<div class="route-popup"><strong>${stop.n}. ${stop.name}</strong>${stop.days}</div>`);
+  });
+
+  const bounds = L.latLngBounds(allCoords);
+  map.fitBounds(bounds, { padding: [34, 34] });
+
+  const shell = document.getElementById('mapShell');
+  document.getElementById('toggleMapTilt')?.addEventListener('click', () => {
+    shell?.classList.toggle('is-flat');
+    setTimeout(() => map.invalidateSize(), 480);
+  });
+
+  document.getElementById('fitRoute')?.addEventListener('click', () => {
+    map.fitBounds(bounds, { padding: [34, 34] });
+  });
+
+  setTimeout(() => map.invalidateSize(), 250);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initJapanRouteMap);
+} else {
+  initJapanRouteMap();
+}
+</script>
 </body>
 </html>
