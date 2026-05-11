@@ -679,6 +679,7 @@ body {
   position: relative;
   height: min(72vh, 700px);
   min-height: 620px;
+  padding: 24px;
   border: 1px solid rgba(201,48,48,0.24);
   background:
     radial-gradient(circle at 20% 12%, rgba(201,48,48,0.18), transparent 28%),
@@ -710,19 +711,17 @@ body {
   z-index: 0;
 }
 .route-map {
-  position: absolute;
-  inset: 24px;
-  height: calc(100% - 48px);
-  min-height: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
   border: 1px solid var(--border-light);
   background: #111;
-  transition: filter 0.35s ease, box-shadow 0.35s ease;
-  filter: saturate(0.92) contrast(1.08) brightness(0.78);
+  transition: box-shadow 0.35s ease;
   box-shadow: 0 28px 60px rgba(0,0,0,0.45);
   z-index: 1;
 }
 .map-shell.is-flat .route-map {
-  filter: none;
   box-shadow: none;
 }
 .map-shell.is-flat::after {
@@ -856,8 +855,8 @@ body {
   .overview-grid { grid-template-columns: 1fr; }
   .flow-step { grid-template-columns: 1fr; gap: 6px; }
   .route-stage { grid-template-columns: 1fr; }
-  .map-shell { height: 520px; min-height: 520px; }
-  .route-map { inset: 12px; height: calc(100% - 24px); }
+  .map-shell { height: 520px; min-height: 520px; padding: 12px; }
+  .route-map { height: 100%; min-height: 490px; }
   .map-toolbar { top: 24px; left: 24px; right: 24px; }
 }
 
@@ -2330,12 +2329,14 @@ function initJapanRouteMap() {
   const map = L.map(mapEl, {
     zoomControl: true,
     scrollWheelZoom: false,
+    fadeAnimation: false,
+    zoomAnimation: false,
     preferCanvas: true
   }).setView([37.5, 138.2], 5);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
   const allCoords = routeStops.map(stop => stop.coords);
@@ -2371,19 +2372,27 @@ function initJapanRouteMap() {
   });
 
   const bounds = L.latLngBounds(allCoords);
-  map.fitBounds(bounds, { padding: [34, 34] });
+  const fitRoute = () => {
+    map.invalidateSize(true);
+    map.fitBounds(bounds, { padding: [34, 34] });
+  };
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(fitRoute);
+  });
 
   const shell = document.getElementById('mapShell');
   document.getElementById('toggleMapTilt')?.addEventListener('click', () => {
     shell?.classList.toggle('is-flat');
-    setTimeout(() => map.invalidateSize(), 480);
+    setTimeout(fitRoute, 120);
   });
 
   document.getElementById('fitRoute')?.addEventListener('click', () => {
-    map.fitBounds(bounds, { padding: [34, 34] });
+    fitRoute();
   });
 
-  setTimeout(() => map.invalidateSize(), 250);
+  setTimeout(fitRoute, 300);
+  setTimeout(fitRoute, 1000);
 }
 
 if (document.readyState === 'loading') {
