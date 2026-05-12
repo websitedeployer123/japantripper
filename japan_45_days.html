@@ -243,12 +243,41 @@ body {
 
 .sec-header {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: start;
   margin-bottom: 56px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
+}
+.section-toggle,
+.tips-toggle {
+  border: 1px solid rgba(232,224,212,0.16);
+  background: rgba(255,255,255,0.035);
+  color: var(--muted);
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.section-toggle:hover,
+.tips-toggle:hover {
+  color: var(--cream);
+  border-color: var(--red);
+}
+.section-content,
+.tips-content {
+  display: block;
+}
+.section.is-collapsed .section-content,
+.tips-box.is-collapsed .tips-content {
+  display: none;
+}
+.section.is-collapsed .sec-header {
+  margin-bottom: 0;
 }
 
 .sec-num {
@@ -558,21 +587,36 @@ body {
 }
 .tips-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--gold); margin-bottom: 20px; position: relative; z-index: 1; }
 
-.tips-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; position: relative; z-index: 1; }
+.tips-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; position: relative; z-index: 1; }
 .tip-item {
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 10px;
-  align-items: start;
+  display: block;
+  position: relative;
   font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
-  padding: 14px;
+  padding: 14px 14px 14px 38px;
   background: rgba(255,255,255,0.025);
   border: 1px solid rgba(255,255,255,0.055);
 }
-.tip-item::before { content: '→'; color: var(--red); font-weight: 800; margin-top: 1px; }
+.tip-item::before {
+  content: '→';
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: var(--red);
+  font-weight: 800;
+}
 .tip-item strong { color: var(--cream); }
+.tips-box > h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.tips-toggle {
+  flex: 0 0 auto;
+  color: var(--cream);
+}
 
 /* ─── CHECKLIST ─── */
 .day-check {
@@ -888,7 +932,9 @@ body {
   .pb-days { display: none; }
   .sec-header { grid-template-columns: 1fr; }
   .sec-num { display: none; }
+  .section-toggle { width: fit-content; }
   .tips-box { padding: 28px 20px; }
+  .tips-cols { grid-template-columns: 1fr; }
   .overview-grid { grid-template-columns: 1fr; }
   .flow-step { grid-template-columns: 1fr; gap: 6px; }
   .route-stage { grid-template-columns: 1fr; }
@@ -2345,6 +2391,69 @@ body {
 </footer>
 
 <script>
+(() => {
+  document.querySelectorAll('section.section').forEach((section, index) => {
+    const wrap = section.querySelector(':scope > .wrap');
+    const header = wrap?.querySelector(':scope > .sec-header');
+    if (!wrap || !header || wrap.querySelector(':scope > .section-content')) return;
+
+    const content = document.createElement('div');
+    content.className = 'section-content';
+    let node = header.nextSibling;
+    while (node) {
+      const next = node.nextSibling;
+      content.appendChild(node);
+      node = next;
+    }
+    wrap.appendChild(content);
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'section-toggle';
+    button.textContent = 'Collapse';
+    button.setAttribute('aria-expanded', 'true');
+    button.setAttribute('aria-controls', `section-content-${index}`);
+    content.id = `section-content-${index}`;
+    header.appendChild(button);
+
+    button.addEventListener('click', () => {
+      const isCollapsed = section.classList.toggle('is-collapsed');
+      button.textContent = isCollapsed ? 'Expand' : 'Collapse';
+      button.setAttribute('aria-expanded', String(!isCollapsed));
+    });
+  });
+
+  document.querySelectorAll('.tips-box').forEach((box, index) => {
+    const title = box.querySelector(':scope > h3');
+    if (!title || box.querySelector(':scope > .tips-content')) return;
+
+    const content = document.createElement('div');
+    content.className = 'tips-content';
+    let node = title.nextSibling;
+    while (node) {
+      const next = node.nextSibling;
+      content.appendChild(node);
+      node = next;
+    }
+    box.appendChild(content);
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'tips-toggle';
+    button.textContent = 'Collapse';
+    button.setAttribute('aria-expanded', 'true');
+    button.setAttribute('aria-controls', `tips-content-${index}`);
+    content.id = `tips-content-${index}`;
+    title.appendChild(button);
+
+    button.addEventListener('click', () => {
+      const isCollapsed = box.classList.toggle('is-collapsed');
+      button.textContent = isCollapsed ? 'Expand' : 'Collapse';
+      button.setAttribute('aria-expanded', String(!isCollapsed));
+    });
+  });
+})();
+
 (() => {
   const storageKey = 'japan-trip-2026-itinerary-checks';
   const getSavedState = () => {
