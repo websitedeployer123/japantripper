@@ -535,32 +535,103 @@ body {
 
 /* ─── TIPS BOX ─── */
 .tips-box {
-  background: var(--surface);
+  background: linear-gradient(145deg, rgba(26,26,26,0.98), rgba(16,16,16,0.98));
   border: 1px solid var(--border);
   border-left: 4px solid var(--gold);
-  padding: 40px 48px;
-  margin: 56px 0;
+  padding: 32px;
+  margin: 24px 0;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
 }
 .tips-box::before {
   content: 'ヒント';
   position: absolute;
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 16px;
+  bottom: -18px;
   font-family: 'Noto Serif JP', serif;
-  font-size: 140px;
+  font-size: 96px;
   font-weight: 700;
-  color: rgba(255,255,255,0.025);
+  color: rgba(255,255,255,0.018);
   line-height: 1;
   pointer-events: none;
 }
-.tips-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 24px; }
+.tips-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--gold); margin-bottom: 20px; position: relative; z-index: 1; }
 
-.tips-cols { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
-.tip-item { display: flex; gap: 12px; align-items: start; font-size: 13px; color: var(--muted); line-height: 1.65; }
-.tip-item::before { content: '→'; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+.tips-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; position: relative; z-index: 1; }
+.tip-item {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  padding: 14px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.055);
+}
+.tip-item::before { content: '→'; color: var(--red); font-weight: 800; margin-top: 1px; }
+.tip-item strong { color: var(--cream); }
+
+/* ─── CHECKLIST ─── */
+.day-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.day-check input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(232,224,212,0.35);
+  background: rgba(8,8,8,0.45);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.day-check input:checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+.day-check input:checked::after {
+  content: '✓';
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+}
+.day-row.is-complete .day-body {
+  opacity: 0.62;
+}
+.day-row.is-complete .day-title {
+  text-decoration: line-through;
+  text-decoration-color: rgba(232,224,212,0.4);
+}
+.checklist-tools {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: -28px 0 32px;
+}
+.checklist-tools button {
+  border: 1px solid rgba(232,224,212,0.18);
+  background: rgba(255,255,255,0.035);
+  color: var(--cream);
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.checklist-tools button:hover { border-color: var(--red); color: var(--red); }
 
 /* ─── WORK SCHEDULE ─── */
 .work-grid {
@@ -741,77 +812,6 @@ body {
   color: var(--cream);
   border-bottom-color: var(--cream);
 }
-.japan-route-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  min-height: 520px;
-}
-.map-sea { fill: #081016; }
-.map-land {
-  fill: #24201d;
-  stroke: rgba(232,224,212,0.38);
-  stroke-width: 1.4;
-}
-.map-land-glow {
-  fill: none;
-  stroke: rgba(201,48,48,0.18);
-  stroke-width: 9;
-  stroke-linejoin: round;
-  filter: blur(1px);
-}
-.route-path-shadow {
-  fill: none;
-  stroke: rgba(0,0,0,0.72);
-  stroke-width: 10;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.route-path {
-  fill: none;
-  stroke: url(#routeGradient);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 10 8;
-}
-.route-flight {
-  fill: none;
-  stroke: rgba(232,224,212,0.55);
-  stroke-width: 2.5;
-  stroke-dasharray: 7 8;
-}
-.map-point circle {
-  stroke: #f8f1e6;
-  stroke-width: 2.5;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
-}
-.map-point text {
-  fill: #fff;
-  font-family: 'Syne', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  text-anchor: middle;
-  dominant-baseline: middle;
-}
-.map-label {
-  fill: var(--cream);
-  font-family: 'Syne', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  paint-order: stroke;
-  stroke: rgba(0,0,0,0.86);
-  stroke-width: 4px;
-  stroke-linejoin: round;
-}
-.map-label.small {
-  fill: var(--muted);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
 .map-note {
   color: var(--muted);
   font-size: 12px;
@@ -821,96 +821,6 @@ body {
   background: rgba(0,0,0,0.24);
 }
 .map-note strong { color: var(--cream); }
-.atlas-grid {
-  stroke: rgba(232,224,212,0.055);
-  stroke-width: 1;
-}
-.atlas-title {
-  fill: rgba(232,224,212,0.92);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34px;
-  font-weight: 700;
-}
-.atlas-subtitle {
-  fill: var(--muted);
-  font-family: 'Syne', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-.island {
-  fill: rgba(232,224,212,0.075);
-  stroke: rgba(232,224,212,0.22);
-  stroke-width: 1.5;
-}
-.island-name {
-  fill: rgba(232,224,212,0.22);
-  font-family: 'Syne', sans-serif;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-}
-.atlas-route-glow {
-  fill: none;
-  stroke: rgba(201,48,48,0.25);
-  stroke-width: 18;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.atlas-route {
-  fill: none;
-  stroke: url(#routeGradient);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.atlas-flight {
-  fill: none;
-  stroke: rgba(232,224,212,0.5);
-  stroke-width: 3;
-  stroke-dasharray: 8 10;
-  stroke-linecap: round;
-}
-.atlas-node circle {
-  stroke: #f8f1e6;
-  stroke-width: 3;
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.7));
-}
-.atlas-node text {
-  fill: #fff;
-  font-family: 'Syne', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  text-anchor: middle;
-  dominant-baseline: middle;
-}
-.atlas-label {
-  fill: var(--cream);
-  font-family: 'Syne', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  paint-order: stroke;
-  stroke: rgba(0,0,0,0.86);
-  stroke-width: 5px;
-  stroke-linejoin: round;
-}
-.atlas-date {
-  fill: var(--muted);
-  font-family: 'Syne', sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  paint-order: stroke;
-  stroke: rgba(0,0,0,0.86);
-  stroke-width: 4px;
-}
-.atlas-card {
-  fill: rgba(8,8,8,0.66);
-  stroke: rgba(232,224,212,0.14);
-  stroke-width: 1;
-}
 .route-side {
   border: 1px solid var(--border);
   background: var(--card);
@@ -985,7 +895,6 @@ body {
   .map-shell { padding: 12px; }
   .route-map { min-height: 500px; }
   .google-map-frame { height: 500px; min-height: 500px; }
-  .japan-route-svg { min-height: 440px; }
 }
 
 /* ─── ANIMATION ─── */
@@ -1133,6 +1042,10 @@ body {
         <h2>Full 45-Day<br>Itinerary</h2>
         <p class="sec-sub">Tuesday Sep 15 to Thursday Oct 29, 2026 — timed for autumn foliage that starts in Hokkaido and sweeps south. Work days, big experiences and long transfers are spread out so the trip remains realistic.</p>
       </div>
+    </div>
+
+    <div class="checklist-tools" aria-label="Itinerary checklist controls">
+      <button type="button" id="clearItineraryChecks">Clear Completed Days</button>
     </div>
 
     <!-- PHASE 1 -->
@@ -2130,7 +2043,7 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Workation · 9 Work Days Built In</span>
         <h2>Work Setup<br>by City</h2>
-        <p class="sec-sub">Nine work days are carved out across the trip — always mid-week, always in cities with excellent café infrastructure. Japan has exceptional internet and coffee culture.</p>
+        <p class="sec-sub">Work buffers are carved out across the trip in cities with good café infrastructure or easy transit. Some are true work days; others are lighter admin/reset days so the route stays realistic.</p>
       </div>
     </div>
 
@@ -2197,14 +2110,14 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Logistics · Money · Transport · Timing</span>
         <h2>Essential Tips<br>&amp; Logistics</h2>
-        <p class="sec-sub">Practical knowledge that saves time, money and frustration across 45 days.</p>
+        <p class="sec-sub">Practical knowledge that saves time, money and frustration across 45 days, including the book-ahead ticket calendar.</p>
       </div>
     </div>
 
     <div class="tips-box">
       <h3>🚅 Transport</h3>
       <div class="tips-cols">
-        <div class="tip-item">Buy a <strong>JR Pass (21-day + 7-day)</strong> before arriving — covers unlimited Shinkansen on JR lines. A 21-day pass pays for itself after 3 Shinkansen rides.</div>
+        <div class="tip-item">Do a <strong>JR Pass vs individual tickets check</strong> once the route is final. The current budget assumes either a 21/14-day pass mix or individual Shinkansen tickets depending on final routing.</div>
         <div class="tip-item"><strong>IC Card (Suica or Pasmo)</strong> is essential — load ¥5,000–10,000 and tap on/off every metro, bus, and convenience store in Japan.</div>
         <div class="tip-item">Shinkansen is the default for anything over 90 minutes. Overnight buses are cheap alternatives (¥3,000–6,000) for Osaka-Tokyo if you want to save a hotel night.</div>
         <div class="tip-item">Taxis are expensive (~¥700 flag-fall). Use for short late-night journeys only. Uber works in major cities; Go app works everywhere.</div>
@@ -2234,6 +2147,20 @@ body {
         <div class="tip-item"><strong>Mid October:</strong> Kyoto begins — Philosopher's Path, Arashiyama, Tōfuku-ji illuminations start. Days 19–28 timing is ideal.</div>
         <div class="tip-item"><strong>Late October:</strong> Tokyo — Shinjuku Gyoen, Ueno Park begin turning. Your final Hokkaido phase catches peak Daisetsuzan colour again.</div>
         <div class="tip-item">Check <strong>koyo.walkerplus.com</strong> (Japan autumn forecast site) 2 weeks ahead for exact timing adjustments.</div>
+      </div>
+    </div>
+
+    <div class="tips-box" style="border-left-color: var(--red); margin-top: 2px;">
+      <h3 style="color: var(--red);">🎟️ Long-Term Ticket Planning</h3>
+      <div class="tips-cols">
+        <div class="tip-item"><strong>Now / May 2026:</strong> Tokyo Legacy Half Marathon 2026 is the urgent decision. Race day is Sun Oct 18. Priority/general entry windows run in May–June, and the race forces a Tokyo weekend reroute if accepted.</div>
+        <div class="tip-item"><strong>June–July 2026:</strong> Lock accommodation for Kyoto, Ginzan Onsen, Kōya-san, Hakone ryokan and Hokkaido onsen nights. Small ryokan and temple stays sell out earlier than city hotels.</div>
+        <div class="tip-item"><strong>July 10, 2026:</strong> Target Ghibli Park tickets if adding Nagoya. Overseas tickets normally open on the 10th of each month at 14:00 JST, two months ahead.</div>
+        <div class="tip-item"><strong>July–August 2026:</strong> Book GT-R/RX-7 rental, helicopter sunset flight, private Iaido, photographer, and Tokyo omakase/kaiseki. These are the highest-risk reservation items.</div>
+        <div class="tip-item"><strong>August 2026:</strong> Book domestic Tokyo → Sapporo flight, Hokkaido rental car, and any premium dining that opens two months out.</div>
+        <div class="tip-item"><strong>2–8 weeks before:</strong> Book teamLab Borderless, Shibuya Sky sunset slot, Skytree, special temple night illuminations and smaller timed-entry museums.</div>
+        <div class="tip-item"><strong>Week of travel:</strong> Re-check autumn foliage forecasts, typhoon/weather risk, Google My Maps route order, and restaurant closure days before locking each city block.</div>
+        <div class="tip-item"><strong>Decision rule:</strong> If Tokyo Legacy Half entry succeeds, move Naruto/Shikoku/Ise later or compress it; if not, keep the current westbound flow.</div>
       </div>
     </div>
 
@@ -2417,5 +2344,70 @@ body {
   <p style="margin-top: 8px; color: rgba(255,255,255,0.2);">Naruto × JJK × Nature × Food × JDM</p>
 </footer>
 
+<script>
+(() => {
+  const storageKey = 'japan-trip-2026-itinerary-checks';
+  const getSavedState = () => {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || '{}');
+    } catch {
+      return {};
+    }
+  };
+  const saved = getSavedState();
+  const rows = Array.from(document.querySelectorAll('#itinerary .day-row'));
+
+  const persist = () => {
+    const state = {};
+    rows.forEach((row, index) => {
+      const input = row.querySelector('.day-check input');
+      if (input?.checked) state[`day-${index}`] = true;
+    });
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    } catch {
+      // Browsers can block storage in private modes; checkboxes still work for the session.
+    }
+  };
+
+  rows.forEach((row, index) => {
+    const body = row.querySelector('.day-body');
+    const title = row.querySelector('.day-title');
+    const dayLabel = row.querySelector('.day-num .dn')?.textContent?.trim() || `${index + 1}`;
+    if (!body || !title || body.querySelector('.day-check')) return;
+
+    const label = document.createElement('label');
+    label.className = 'day-check';
+
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.checked = Boolean(saved[`day-${index}`]);
+    input.setAttribute('aria-label', `Mark day ${dayLabel} complete`);
+
+    const text = document.createElement('span');
+    text.textContent = `Mark day ${dayLabel} done`;
+
+    label.append(input, text);
+    body.insertBefore(label, title);
+    row.classList.toggle('is-complete', input.checked);
+
+    input.addEventListener('change', () => {
+      row.classList.toggle('is-complete', input.checked);
+      persist();
+    });
+  });
+
+  document.getElementById('clearItineraryChecks')?.addEventListener('click', () => {
+    rows.forEach(row => {
+      const input = row.querySelector('.day-check input');
+      if (input) input.checked = false;
+      row.classList.remove('is-complete');
+    });
+    try {
+      localStorage.removeItem(storageKey);
+    } catch {}
+  });
+})();
+</script>
 </body>
 </html>
