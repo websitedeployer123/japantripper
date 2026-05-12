@@ -1035,11 +1035,13 @@ body {
     </div>
 
     <div class="overview-flow">
+      <div class="flow-step"><div class="flow-date">Day 0</div><div class="flow-text"><strong>Lisbon → Tokyo:</strong> international travel day outside the 45 Japan-day count. Use it for flights, layover, sleep strategy and landing logistics.</div></div>
       <div class="flow-step"><div class="flow-date">Sep 15–24</div><div class="flow-text"><strong>Tokyo + Hakone:</strong> orientation, anime districts, helicopter, omakase, JDM mountain road day, Lake Ashi and Nujabes stops.</div></div>
       <div class="flow-step"><div class="flow-date">Sep 25–Oct 2</div><div class="flow-text"><strong>Tohoku + Alps:</strong> ornate shrines, onsen towns, Sendai work base, Matsushima Bay, Naruko Gorge and Jigokudani/Karuizawa.</div></div>
       <div class="flow-step"><div class="flow-date">Oct 3–14</div><div class="flow-text"><strong>Kyoto, Nara + Osaka:</strong> Fushimi Inari at dawn, Arashiyama, sword class, Nara deer, Osaka food and Kōya-san temple lodging.</div></div>
       <div class="flow-step"><div class="flow-date">Oct 15–22</div><div class="flow-text"><strong>Hiroshima, Shikoku + Ise:</strong> Peace Memorial, Miyajima sunrise, Dōgo Onsen, Naruto whirlpools, Ise Grand Shrine and return toward Tokyo.</div></div>
       <div class="flow-step"><div class="flow-date">Oct 23–29</div><div class="flow-text"><strong>Hokkaido finish:</strong> Sapporo ramen/seafood, Daisetsuzan, volcanic lake country, Noboribetsu onsen and Otaru canal.</div></div>
+      <div class="flow-step"><div class="flow-date">After Day 45</div><div class="flow-text"><strong>Tokyo/Sapporo → Lisbon:</strong> return flight home sits outside the 45-day Japan itinerary, so the Japan count stays clean.</div></div>
     </div>
   </div>
 </section>
@@ -1100,6 +1102,27 @@ body {
 
     <div class="checklist-tools" aria-label="Itinerary checklist controls">
       <button type="button" id="clearItineraryChecks">Clear Completed Days</button>
+    </div>
+
+    <div class="phase-banner gold-accent">
+      <div>
+        <div class="pb-label">Day 0 · International Travel · Outside Japan Count</div>
+        <div class="pb-title">Lisbon → Tokyo — Positioning Flight</div>
+        <div class="pb-sub">This is not one of the 45 Japan days. It is the long-haul travel buffer: Lisbon airport, connection, sleep strategy, arrival paperwork, eSIM/pocket wifi pickup planning and first-night hotel timing.</div>
+      </div>
+      <div class="pb-days"><div class="big">0</div><div class="sm">Pre-trip</div></div>
+    </div>
+
+    <div class="days-stack">
+      <div class="day-row travel-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">0</span><span class="dr">Flight</span></div>
+        <div class="day-body">
+          <div class="day-city">Lisbon → Tokyo</div>
+          <div class="day-title">Long-Haul Flight, Layover &amp; Arrival Setup</div>
+          <div class="day-desc">Fly from <strong>Lisbon to Tokyo</strong> via the best available one-stop route. Treat this as a logistics day, not a Japan sightseeing day: confirm passport/visa requirements, travel insurance, eSIM or pocket wifi, airport transfer, first-night hotel check-in time, and whether arrival is Narita or Haneda. If arrival lands late, keep Day 1 intentionally light.</div>
+          <div class="day-tags"><span class="dtag g">Outside 45-Day Count</span><span class="dtag">International Flight</span><span class="dtag">Lisbon</span><span class="dtag">Tokyo Arrival Setup</span></div>
+        </div>
+      </div>
     </div>
 
     <!-- PHASE 1 -->
@@ -1524,10 +1547,10 @@ body {
       <div class="day-row big-day">
         <div class="day-num"><span class="dl">Day</span><span class="dn">45</span><span class="dr">Final</span></div>
         <div class="day-body">
-          <div class="day-city">Sapporo → Departure</div>
-          <div class="day-title">Final Morning + Departure</div>
-          <div class="day-desc">Final morning: Sapporo's <strong>Odori Park</strong> one last time — long tree-lined boulevard through the city centre, blazing orange and red in late October. Pick up last omiyage (souvenirs): Hokkaido butter cookies, white chocolate Shiroi Koibito, and Hokkaido cheese. Head to New Chitose Airport early — the airport has excellent departure-lounge food and Hokkaido-exclusive shops. Flight home from a journey that reshaped what travel means to you.</div>
-          <div class="day-tags"><span class="dtag gr">Final Day</span><span class="dtag">Otaru</span><span class="dtag">Departure</span></div>
+          <div class="day-city">Sapporo → New Chitose / Tokyo connection → Lisbon</div>
+          <div class="day-title">Final Japan Morning + Return Flight Handoff</div>
+          <div class="day-desc">Final Japan morning: Sapporo's <strong>Odori Park</strong> one last time — long tree-lined boulevard through the city centre, blazing orange and red in late October. Pick up last omiyage: Hokkaido butter cookies, Shiroi Koibito, and Hokkaido cheese. Head to New Chitose Airport early. The onward <strong>flight back to Lisbon</strong> is the return-travel handoff and sits outside the 45-day Japan count, just like Day 0.</div>
+          <div class="day-tags"><span class="dtag gr">Final Japan Day</span><span class="dtag">Return to Lisbon</span><span class="dtag">Outside Count After Departure</span></div>
         </div>
       </div>
     </div>
@@ -2476,9 +2499,10 @@ body {
 
   const persist = () => {
     const state = {};
-    rows.forEach((row, index) => {
+    rows.forEach(row => {
       const input = row.querySelector('.day-check input');
-      if (input?.checked) state[`day-${index}`] = true;
+      const label = row.querySelector('.day-num .dn')?.textContent?.trim();
+      if (input?.checked && label) state[`day-${label}`] = true;
     });
     try {
       localStorage.setItem(storageKey, JSON.stringify(state));
@@ -2492,13 +2516,14 @@ body {
     const title = row.querySelector('.day-title');
     const dayLabel = row.querySelector('.day-num .dn')?.textContent?.trim() || `${index + 1}`;
     if (!body || !title || body.querySelector('.day-check')) return;
+    const stateKey = `day-${dayLabel}`;
 
     const label = document.createElement('label');
     label.className = 'day-check';
 
     const input = document.createElement('input');
     input.type = 'checkbox';
-    input.checked = Boolean(saved[`day-${index}`]);
+    input.checked = Boolean(saved[stateKey] ?? saved[`day-${index}`]);
     input.setAttribute('aria-label', `Mark day ${dayLabel} complete`);
 
     const text = document.createElement('span');
