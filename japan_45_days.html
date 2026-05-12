@@ -710,6 +710,7 @@ body {
 .route-map {
   position: relative;
   width: 100%;
+  min-height: 640px;
   border: 1px solid var(--border-light);
   background:
     radial-gradient(circle at 66% 18%, rgba(42,138,122,0.14), transparent 18%),
@@ -719,6 +720,23 @@ body {
   box-shadow: 0 28px 60px rgba(0,0,0,0.45);
   z-index: 1;
   overflow: hidden;
+}
+.google-map-frame {
+  display: block;
+  width: 100%;
+  height: 640px;
+  min-height: 640px;
+  border: 0;
+  filter: saturate(0.92) contrast(1.02);
+}
+.google-map-link {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200,150,42,0.35);
+}
+.google-map-link:hover {
+  color: var(--cream);
+  border-bottom-color: var(--cream);
 }
 .japan-route-svg {
   display: block;
@@ -962,6 +980,8 @@ body {
   .flow-step { grid-template-columns: 1fr; gap: 6px; }
   .route-stage { grid-template-columns: 1fr; }
   .map-shell { padding: 12px; }
+  .route-map { min-height: 500px; }
+  .google-map-frame { height: 500px; min-height: 500px; }
   .japan-route-svg { min-height: 440px; }
 }
 
@@ -1065,7 +1085,7 @@ body {
     <div class="sec-header">
       <div class="sec-num">00</div>
       <div class="sec-titles">
-        <span class="sec-label">Route Atlas · Static · High Contrast</span>
+        <span class="sec-label">Google My Maps · Interactive Route</span>
         <h2>How You Move<br>Across Japan</h2>
         <p class="sec-sub">A north-to-south-to-north arc for Sep 15–Oct 29, 2026: Tokyo immersion, mountain and onsen detours, Kyoto/Osaka culture, Hiroshima/Shikoku/Ise, then a final flight to Hokkaido for wild autumn landscapes.</p>
       </div>
@@ -1074,70 +1094,14 @@ body {
     <div class="route-stage">
       <div class="map-shell" id="mapShell">
         <div class="route-map" aria-label="Japan trip route map">
-          <svg class="japan-route-svg" viewBox="0 0 960 640" role="img" aria-labelledby="routeMapTitle routeMapDesc">
-            <title id="routeMapTitle">45-day Japan route map</title>
-            <desc id="routeMapDesc">A visible static route map showing the trip from Tokyo to Tohoku, Kansai, Hiroshima, Shikoku, Ise, Tokyo and Hokkaido.</desc>
-            <defs>
-              <linearGradient id="routeGradient" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#c93030"/>
-                <stop offset="28%" stop-color="#c8962a"/>
-                <stop offset="52%" stop-color="#6b3fa0"/>
-                <stop offset="75%" stop-color="#2a8a7a"/>
-                <stop offset="100%" stop-color="#3a7a4a"/>
-              </linearGradient>
-              <pattern id="atlasGrid" width="48" height="48" patternUnits="userSpaceOnUse">
-                <path class="atlas-grid" d="M48 0H0V48"/>
-              </pattern>
-            </defs>
-
-            <rect class="map-sea" x="0" y="0" width="960" height="640"/>
-            <rect x="0" y="0" width="960" height="640" fill="url(#atlasGrid)"/>
-            <text class="atlas-title" x="54" y="72">Japan Route Atlas</text>
-            <text class="atlas-subtitle" x="58" y="102">Sep 15 - Oct 29, 2026 · Tokyo to Hokkaido via Kansai, Shikoku and Ise</text>
-
-            <path class="island" d="M652 74 C704 50 778 72 804 124 C830 176 804 226 746 238 C684 252 622 220 606 166 C592 120 614 88 652 74 Z"/>
-            <path class="island" d="M585 168 C642 200 686 256 674 320 C660 394 584 424 536 470 C490 514 444 556 374 552 C304 548 250 506 220 446 C190 386 204 324 254 288 C304 252 348 260 398 228 C450 194 514 128 585 168 Z"/>
-            <path class="island" d="M320 454 C358 448 398 466 414 500 C386 528 332 530 296 502 C292 478 302 462 320 454 Z"/>
-            <path class="island" d="M202 468 C244 478 270 516 258 558 C212 560 168 530 154 490 C166 472 184 464 202 468 Z"/>
-            <text class="island-name" x="682" y="154">HOKKAIDO</text>
-            <text class="island-name" x="430" y="372">HONSHU</text>
-            <text class="island-name" x="305" y="494">SHIKOKU</text>
-            <text class="island-name" x="166" y="535">KYUSHU</text>
-
-            <path class="atlas-route-glow" d="M578 338 C548 330 522 312 506 286 C482 248 520 206 574 180 C540 236 474 300 414 360 C382 392 362 420 322 438 C282 456 244 450 214 426 C252 402 310 396 364 418 C420 440 486 416 540 370 C584 332 612 260 724 154"/>
-            <path class="atlas-route" d="M578 338 C548 330 522 312 506 286 C482 248 520 206 574 180 C540 236 474 300 414 360 C382 392 362 420 322 438 C282 456 244 450 214 426 C252 402 310 396 364 418 C420 440 486 416 540 370 C584 332 612 260 724 154"/>
-            <path class="atlas-flight" d="M578 338 C660 302 712 242 724 154"/>
-
-            <rect class="atlas-card" x="596" y="316" width="184" height="58" rx="8"/>
-            <text class="atlas-label" x="620" y="340">Tokyo</text>
-            <text class="atlas-date" x="620" y="360">Sep 15-24 · Oct 20-22</text>
-
-            <rect class="atlas-card" x="378" y="322" width="200" height="58" rx="8"/>
-            <text class="atlas-label" x="398" y="346">Kyoto / Osaka</text>
-            <text class="atlas-date" x="398" y="366">Oct 3-14</text>
-
-            <rect class="atlas-card" x="92" y="390" width="190" height="58" rx="8"/>
-            <text class="atlas-label" x="112" y="414">Hiroshima + Shikoku</text>
-            <text class="atlas-date" x="112" y="434">Oct 15-18</text>
-
-            <rect class="atlas-card" x="614" y="110" width="180" height="58" rx="8"/>
-            <text class="atlas-label" x="636" y="134">Hokkaido</text>
-            <text class="atlas-date" x="636" y="154">Oct 23-29</text>
-
-            <g class="atlas-node"><circle cx="578" cy="338" r="16" fill="#c93030"/><text x="578" y="338">1</text></g>
-            <g class="atlas-node"><circle cx="506" cy="286" r="14" fill="#c93030"/><text x="506" y="286">2</text></g>
-            <g class="atlas-node"><circle cx="574" cy="180" r="14" fill="#c8962a"/><text x="574" y="180">3</text></g>
-            <g class="atlas-node"><circle cx="414" cy="360" r="15" fill="#6b3fa0"/><text x="414" y="360">4</text></g>
-            <g class="atlas-node"><circle cx="322" cy="438" r="14" fill="#6b3fa0"/><text x="322" y="438">5</text></g>
-            <g class="atlas-node"><circle cx="214" cy="426" r="14" fill="#2a8a7a"/><text x="214" y="426">6</text></g>
-            <g class="atlas-node"><circle cx="364" cy="418" r="14" fill="#2a8a7a"/><text x="364" y="418">7</text></g>
-            <g class="atlas-node"><circle cx="724" cy="154" r="16" fill="#3a7a4a"/><text x="724" y="154">8</text></g>
-
-            <text class="atlas-label" x="522" y="268">Hakone</text>
-            <text class="atlas-label" x="594" y="198">Tohoku</text>
-            <text class="atlas-label" x="340" y="454">Kōya-san / Ise</text>
-          </svg>
-          <div class="map-note"><strong>Legend:</strong> 1 Tokyo, 2 Hakone, 3 Tohoku/Nikko, 4 Kyoto/Osaka, 5 Kōya-san, 6 Hiroshima/Shikoku, 7 Ise and return, 8 Hokkaido. Static by design, so it stays sharp and cannot break like a tile map.</div>
+          <iframe
+            class="google-map-frame"
+            src="https://www.google.com/maps/d/embed?mid=1crH73FCOAUK8HZzJ_oEycB3xKKIaQP4&ehbc=2E312F"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            title="Japan trip route on Google My Maps"></iframe>
+          <div class="map-note"><strong>Interactive Google My Maps route.</strong> If the embed does not load, open the map directly in <a class="google-map-link" href="https://www.google.com/maps/d/u/0/edit?mid=1crH73FCOAUK8HZzJ_oEycB3xKKIaQP4&amp;usp=sharing" target="_blank" rel="noopener">Google My Maps</a>.</div>
         </div>
       </div>
 
