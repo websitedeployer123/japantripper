@@ -6,7 +6,7 @@
 <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="expires" content="0">
-<title>45 Days in Japan — Sep–Oct 2026 Workation Guide</title>
+<title>60 Days in Japan — Sep–Nov 2026 Workation Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Syne:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@200;300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -385,6 +385,7 @@ body {
 .day-row.big-day { border-left: 3px solid var(--red); }
 .day-row.anime-day { border-left: 3px solid var(--purple); }
 .day-row.nature-day { border-left: 3px solid var(--green); }
+.day-row.flex-day { border-left: 3px solid rgba(232,224,212,0.18); }
 
 .day-num {
   background: var(--surface);
@@ -403,6 +404,7 @@ body {
 .day-row.work-day .day-num .dr { color: var(--gold); }
 .day-row.anime-day .day-num .dr { color: var(--purple); }
 .day-row.nature-day .day-num .dr { color: var(--green); }
+.day-row.flex-day .day-num .dr { color: var(--muted); }
 
 .day-body {
   padding: 18px 24px;
@@ -415,12 +417,13 @@ body {
 .day-row.work-day .day-city { color: var(--gold); }
 .day-row.anime-day .day-city { color: var(--purple); }
 .day-row.nature-day .day-city { color: var(--green); }
+.day-row.flex-day .day-city { color: var(--muted); }
 
 .day-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: var(--cream); line-height: 1.2; }
 
 .day-desc { font-size: 14.5px; color: var(--muted); line-height: 1.85; }
 
-.day-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.day-tags { display: none; }
 .dtag {
   font-size: 9px;
   font-weight: 600;
@@ -971,10 +974,10 @@ body {
   <div class="hero-content">
     <div class="hero-kicker">The Complete Workation Guide · 2026</div>
     <h1 class="hero-title">
-      45 Days
+      60 Days
       <span class="line2">in Japan</span>
     </h1>
-    <p class="hero-dates">Tue Sep 15 — Thu Oct 29, 2026 &nbsp;·&nbsp; 日本への旅</p>
+    <p class="hero-dates">Tue Sep 15 — Fri Nov 13, 2026 &nbsp;·&nbsp; 45 planned days + 15 blank days</p>
     <div class="hero-pills">
       <span class="pill pill-red">🍁 Peak Autumn Foliage</span>
       <span class="pill pill-purple">🍥 Naruto &amp; JJK</span>
@@ -986,10 +989,10 @@ body {
       <span class="pill pill-gold">🎵 Nujabes Trail</span>
     </div>
     <div class="hero-stats">
-      <div class="h-stat"><span class="sn">45</span><span class="sl">Days</span></div>
+      <div class="h-stat"><span class="sn">60</span><span class="sl">Days</span></div>
       <div class="h-stat"><span class="sn">13</span><span class="sl">Cities</span></div>
-      <div class="h-stat"><span class="sn">9</span><span class="sl">Work Days</span></div>
-      <div class="h-stat"><span class="sn">∞</span><span class="sl">Ramen</span></div>
+      <div class="h-stat"><span class="sn">20+</span><span class="sl">Cultural Places</span></div>
+      <div class="h-stat"><span class="sn">15+</span><span class="sl">Nature Places</span></div>
     </div>
   </div>
 </section>
@@ -1000,15 +1003,9 @@ body {
     <a class="nav-item" href="#overview">Overview</a>
     <a class="nav-item" href="#route">Route Map</a>
     <a class="nav-item" href="#itinerary">Itinerary</a>
-    <a class="nav-item" href="#big">Big Experiences</a>
-    <a class="nav-item" href="#anime">Naruto &amp; JJK</a>
-    <a class="nav-item" href="#nature">Nature</a>
-    <a class="nav-item" href="#food">Food</a>
-    <a class="nav-item" href="#nujabes">🎵 Nujabes</a>
-    <a class="nav-item" href="#photos">Photo Spots</a>
-    <a class="nav-item" href="#work">Work Setup</a>
+    <a class="nav-item" href="#big">Experiences</a>
     <a class="nav-item" href="#budget">Budget</a>
-    <a class="nav-item" href="#tips">Tips &amp; Logistics</a>
+    <a class="nav-item" href="#tips">Logistics</a>
   </div>
 </nav>
 
@@ -1021,7 +1018,7 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Short Version · 2026 Calendar Anchor</span>
         <h2>The Trip<br>in Plain English</h2>
-        <p class="sec-sub">A 45-day Japan workation from <strong>Tuesday Sep 15 to Thursday Oct 29, 2026</strong>. The plan mixes anime/Nujabes pilgrimages, major food days, autumn nature, a few high-ticket experiences, and enough work blocks to keep the trip realistic.</p>
+        <p class="sec-sub">A 60-day Japan workation from <strong>Tuesday Sep 15 to Friday Nov 13, 2026</strong>: 45 planned days plus 15 blank days left open for ideas we add later.</p>
       </div>
     </div>
 
@@ -1030,18 +1027,19 @@ body {
       <div class="overview-card"><strong>Go North for Wild Japan</strong><span>Nikko, Ginzan Onsen, Sendai, Matsushima, Naruko Gorge and the snow monkeys give the trip its mountain/onsen spine.</span></div>
       <div class="overview-card"><strong>Then Culture + Food</strong><span>Kyoto, Nara, Osaka and Kōya-san carry the temples, sword class, street food, kaiseki, JJK/Naruto energy and night photography.</span></div>
       <div class="overview-card"><strong>Westward Pilgrimage</strong><span>Hiroshima and Miyajima slow the pace down, then Shikoku adds Dōgo Onsen and Naruto whirlpools before returning through Ise.</span></div>
-      <div class="overview-card"><strong>Finish in Hokkaido</strong><span>Sapporo, Daisetsuzan, Asahikawa, Lake Tōya, Noboribetsu and Otaru close the trip with seafood, volcanoes and autumn landscapes.</span></div>
-      <div class="overview-card"><strong>Optional Race Pivot</strong><span>If we get Tokyo Legacy Half Marathon 2026 entry, keep Sunday Oct 18 flexible and reroute the Shikoku/Ise stretch around Tokyo.</span></div>
+      <div class="overview-card"><strong>Finish the Planned Route in Hokkaido</strong><span>Sapporo, Daisetsuzan, Asahikawa, Lake Tōya, Noboribetsu and Otaru close the planned 45-day route.</span></div>
+      <div class="overview-card"><strong>Keep 15 Days Blank</strong><span>Days 46–60 are open placeholders for activities, reroutes, rest days or places you add later.</span></div>
     </div>
 
     <div class="overview-flow">
-      <div class="flow-step"><div class="flow-date">Day 0</div><div class="flow-text"><strong>Lisbon → Tokyo:</strong> international travel day outside the 45 Japan-day count. Use it for flights, layover, sleep strategy and landing logistics.</div></div>
+      <div class="flow-step"><div class="flow-date">Day 0</div><div class="flow-text"><strong>Lisbon → Tokyo:</strong> outbound travel, outside the Japan-day count.</div></div>
       <div class="flow-step"><div class="flow-date">Sep 15–24</div><div class="flow-text"><strong>Tokyo + Hakone:</strong> orientation, anime districts, helicopter, omakase, JDM mountain road day, Lake Ashi and Nujabes stops.</div></div>
       <div class="flow-step"><div class="flow-date">Sep 25–Oct 2</div><div class="flow-text"><strong>Tohoku + Alps:</strong> ornate shrines, onsen towns, Sendai work base, Matsushima Bay, Naruko Gorge and Jigokudani/Karuizawa.</div></div>
       <div class="flow-step"><div class="flow-date">Oct 3–14</div><div class="flow-text"><strong>Kyoto, Nara + Osaka:</strong> Fushimi Inari at dawn, Arashiyama, sword class, Nara deer, Osaka food and Kōya-san temple lodging.</div></div>
       <div class="flow-step"><div class="flow-date">Oct 15–22</div><div class="flow-text"><strong>Hiroshima, Shikoku + Ise:</strong> Peace Memorial, Miyajima sunrise, Dōgo Onsen, Naruto whirlpools, Ise Grand Shrine and return toward Tokyo.</div></div>
       <div class="flow-step"><div class="flow-date">Oct 23–29</div><div class="flow-text"><strong>Hokkaido finish:</strong> Sapporo ramen/seafood, Daisetsuzan, volcanic lake country, Noboribetsu onsen and Otaru canal.</div></div>
-      <div class="flow-step"><div class="flow-date">After Day 45</div><div class="flow-text"><strong>Tokyo/Sapporo → Lisbon:</strong> return flight home sits outside the 45-day Japan itinerary, so the Japan count stays clean.</div></div>
+      <div class="flow-step"><div class="flow-date">Oct 30–Nov 13</div><div class="flow-text"><strong>Blank days:</strong> 15 open slots for activities we add later.</div></div>
+      <div class="flow-step"><div class="flow-date">After Day 60</div><div class="flow-text"><strong>Japan → Lisbon:</strong> return travel after the flexible block.</div></div>
     </div>
   </div>
 </section>
@@ -1055,7 +1053,7 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Google My Maps · Interactive Route</span>
         <h2>How You Move<br>Across Japan</h2>
-        <p class="sec-sub">A north-to-south-to-north arc for Sep 15–Oct 29, 2026: Tokyo immersion, mountain and onsen detours, Kyoto/Osaka culture, Hiroshima/Shikoku/Ise, then a final flight to Hokkaido for wild autumn landscapes.</p>
+        <p class="sec-sub">The mapped route shows the planned Sep 15–Oct 29 route. Days 46–60 are intentionally blank until we decide where to use them.</p>
       </div>
     </div>
 
@@ -1095,8 +1093,8 @@ body {
       <div class="sec-num">01</div>
       <div class="sec-titles">
         <span class="sec-label">Day by Day</span>
-        <h2>Full 45-Day<br>Itinerary</h2>
-        <p class="sec-sub">Tuesday Sep 15 to Thursday Oct 29, 2026 — timed for autumn foliage that starts in Hokkaido and sweeps south. Work days, big experiences and long transfers are spread out so the trip remains realistic.</p>
+        <h2>Full 60-Day<br>Itinerary</h2>
+        <p class="sec-sub">Tuesday Sep 15 to Friday Nov 13, 2026 — 45 planned days, followed by 15 blank days for activities we add later.</p>
       </div>
     </div>
 
@@ -1108,7 +1106,7 @@ body {
       <div>
         <div class="pb-label">Day 0 · International Travel · Outside Japan Count</div>
         <div class="pb-title">Lisbon → Tokyo — Positioning Flight</div>
-        <div class="pb-sub">This is not one of the 45 Japan days. It is the long-haul travel buffer: Lisbon airport, connection, sleep strategy, arrival paperwork, eSIM/pocket wifi pickup planning and first-night hotel timing.</div>
+        <div class="pb-sub">Outbound travel only. It is not part of the Japan day count.</div>
       </div>
       <div class="pb-days"><div class="big">0</div><div class="sm">Pre-trip</div></div>
     </div>
@@ -1118,9 +1116,9 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">0</span><span class="dr">Flight</span></div>
         <div class="day-body">
           <div class="day-city">Lisbon → Tokyo</div>
-          <div class="day-title">Long-Haul Flight, Layover &amp; Arrival Setup</div>
-          <div class="day-desc">Fly from <strong>Lisbon to Tokyo</strong> via the best available one-stop route. Treat this as a logistics day, not a Japan sightseeing day: confirm passport/visa requirements, travel insurance, eSIM or pocket wifi, airport transfer, first-night hotel check-in time, and whether arrival is Narita or Haneda. If arrival lands late, keep Day 1 intentionally light.</div>
-          <div class="day-tags"><span class="dtag g">Outside 45-Day Count</span><span class="dtag">International Flight</span><span class="dtag">Lisbon</span><span class="dtag">Tokyo Arrival Setup</span></div>
+          <div class="day-title">Outbound Flight</div>
+          <div class="day-desc">Fly from <strong>Lisbon to Tokyo</strong>. This is only here to keep flights visible in the plan; it does not count as a Japan day.</div>
+          <div class="day-tags"><span class="dtag g">Outside Japan Count</span><span class="dtag">International Flight</span><span class="dtag">Lisbon</span><span class="dtag">Tokyo Arrival Setup</span></div>
         </div>
       </div>
     </div>
@@ -1130,7 +1128,7 @@ body {
       <div>
         <div class="pb-label">Phase 1 · Days 1–10 · Sep 15–24, 2026</div>
         <div class="pb-title">Tokyo — Megacity Immersion</div>
-        <div class="pb-sub">Anime districts, fine dining, helicopter views, JDM cars, sumo — learn the rhythm of the world's greatest city.</div>
+        <div class="pb-sub">Tokyo base days, food, anime shops, the helicopter slot, and the Hakone car day.</div>
       </div>
       <div class="pb-days"><div class="big">10</div><div class="sm">Days</div></div>
     </div>
@@ -1141,7 +1139,7 @@ body {
         <div class="day-body">
           <div class="day-city">Narita / Shinjuku · Tokyo</div>
           <div class="day-title">Land. Orient. First Ramen.</div>
-          <div class="day-desc">Arrive Narita or Haneda. Grab a Suica card and take the Narita Express to Shinjuku. Check into your hotel — <strong>Park Hyatt Tokyo</strong> (Lost in Translation floors) or <strong>Ace Hotel Shinjuku</strong> for something more local. Evening: walk Kabukichō neon chaos, then a quiet bowl of <strong>tsukemen at Fuunji</strong> (rich dipping ramen, queue worth it). Early night — jet lag is real.</div>
+          <div class="day-desc">Arrive Narita or Haneda. Get Suica/Pasmo, take the airport train into Tokyo, check in, and keep the evening simple: Shinjuku walk plus ramen at Fuunji if energy allows.</div>
           <div class="day-tags"><span class="dtag r">Arrival</span><span class="dtag">Shinjuku</span><span class="dtag">Ramen</span></div>
         </div>
       </div>
@@ -1151,7 +1149,7 @@ body {
         <div class="day-body">
           <div class="day-city">Shibuya · Harajuku · Omotesandō</div>
           <div class="day-title">Fashion, Architecture & the Famous Crossing</div>
-          <div class="day-desc">Morning: Meiji Jingū shrine for stillness amid forest. Harajuku's Takeshita Street for wild street fashion and taiyaki. Lunch in Omotesandō (Afuri yuzu ramen nearby). Afternoon: walk the boulevard and its architectural icons — Herzog &amp; de Meuron Prada, Kengo Kuma buildings. Sunset: <strong>Shibuya Sky rooftop observation deck</strong> — the crossing from above is one of the best views in Japan. Dinner at a standing sushi bar in Shibuya.</div>
+          <div class="day-desc">Meiji Jingū, Harajuku, Omotesandō architecture, then Shibuya Sky around sunset. Dinner in Shibuya.</div>
           <div class="day-tags"><span class="dtag r">Photo Spot</span><span class="dtag t">Temple</span><span class="dtag">Fashion</span><span class="dtag">Iconic</span></div>
         </div>
       </div>
@@ -1161,7 +1159,7 @@ body {
         <div class="day-body">
           <div class="day-city">Akihabara · Jimbocho · Ikebukuro</div>
           <div class="day-title">Full Anime &amp; Manga Deep Dive</div>
-          <div class="day-desc">All day in Akihabara — <strong>Mandarake Complex</strong> (8 floors of manga/figures), Kotobukiya, Radio Kaikan, Yodobashi Camera. Breakfast at a maid café. Look for <strong>Naruto and JJK merchandise</strong> at animate and Surugaya. Afternoon: multi-floor arcades — rhythm games, UFO catchers, Gundam vs. Evening: Ikebukuro's Sunshine City and <strong>J-World Tokyo</strong> (Naruto &amp; other Jump IPs attractions). Themed izakaya dinner.</div>
+          <div class="day-desc">Akihabara for Mandarake, Kotobukiya, Radio Kaikan, Yodobashi, animate and Surugaya. Add arcades if there is time, then Ikebukuro in the evening.</div>
           <div class="day-tags"><span class="dtag p">Naruto</span><span class="dtag p">JJK</span><span class="dtag p">Anime</span><span class="dtag">Arcade</span></div>
         </div>
       </div>
@@ -1171,7 +1169,7 @@ body {
         <div class="day-body">
           <div class="day-city">Odaiba · Heliport · Shiodome</div>
           <div class="day-title">🚁 Helicopter Tour over Tokyo</div>
-          <div class="day-desc"><strong>BOOK IN ADVANCE:</strong> <em>Nakanihon Air</em> or <em>Noevir Helicopters</em> depart from Odaiba Heliport. Choose the sunset slot (~17:30) for golden-hour views of Shinjuku skyline, Rainbow Bridge, Tokyo Bay, and Mt. Fuji on a clear September day. ~25 mins, ¥35,000–60,000/person. Before your flight: the <strong>full-scale Unicorn Gundam statue</strong> at Odaiba Diver City and teamLab Borderless (book ahead). Post-flight: dinner at Aqua City restaurant strip overlooking the lit-up Rainbow Bridge.</div>
+          <div class="day-desc"><strong>Book ahead:</strong> sunset helicopter slot from Odaiba if available. Before or after: Unicorn Gundam, teamLab Borderless, dinner around Odaiba/Shiodome.</div>
           <div class="day-tags"><span class="dtag r">🚁 Helicopter</span><span class="dtag p">Gundam</span><span class="dtag r">Sunset View</span></div>
         </div>
       </div>
@@ -1181,7 +1179,7 @@ body {
         <div class="day-body">
           <div class="day-city">Daikanyama · Nakameguro</div>
           <div class="day-title">💻 Work Day — Tokyo's Most Beautiful Neighbourhoods</div>
-          <div class="day-desc">Work from <strong>Tsutaya Books Daikanyama</strong> — arguably the most beautiful bookshop/café in Japan, excellent wifi, calm atmosphere. Morning coffee run along the Meguro River canal (autumn leaves are starting). Lunch break: excellent cafés and small pasta restaurants nearby. Evening off: stroll the canal as the lanterns come on, izakaya dinner in Nakameguro.</div>
+          <div class="day-desc">Work from Daikanyama or Nakameguro. Keep the evening local: Meguro River walk and dinner nearby.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag">Café Wifi</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1191,7 +1189,7 @@ body {
         <div class="day-body">
           <div class="day-city">Asakusa · Yanaka · Skytree</div>
           <div class="day-title">Old Tokyo: Temples, Time Warp &amp; Heights</div>
-          <div class="day-desc">6am: <strong>Senso-ji Temple</strong> before the crowds — mystical, incense-heavy, ancient. Walk Nakamise shopping street for <strong>ningyo-yaki and kaminari okoshi</strong> (temple street snacks). Yanaka — Tokyo's preserved old town with cat cafés, graveyards, and old shops. Best street food: Yanaka Ginza. Late afternoon: Tokyo Skytree (634m) for views. Dinner: monjayaki (Tokyo-style pancake) in Tsukishima.</div>
+          <div class="day-desc">Early Senso-ji, Nakamise snacks, Yanaka Ginza, then Tokyo Skytree. Dinner: monjayaki in Tsukishima.</div>
           <div class="day-tags"><span class="dtag t">Temple</span><span class="dtag">Street Food</span><span class="dtag">Local Gem</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1200,8 +1198,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">7</span><span class="dr">Tokyo</span></div>
         <div class="day-body">
           <div class="day-city">Tsukiji · Ginza · Nihonbashi</div>
-          <div class="day-title">Finest Food Day in Tokyo</div>
-          <div class="day-desc">6am: <strong>Tsukiji Outer Market</strong> — tamagoyaki, fresh uni on rice, tuna sashimi. The best breakfast in Japan. Afternoon: Ginza's galleries and boutiques (ITOYA stationery is a must). Evening: <strong>omakase sushi at Sushi Yoshitake or Harutaka</strong> (Michelin 3-star, book 2–3 months ahead) — roughly ¥40,000–60,000/person. If unavailable, Nihonbashi Yukari for spectacular kaiseki. Post-dinner: rooftop bar at Aman Tokyo for nightcaps.</div>
+          <div class="day-title">Tokyo Food Day</div>
+          <div class="day-desc">Tsukiji Outer Market in the morning, Ginza/Nihonbashi in the afternoon, then omakase if booked. Backup: kaiseki or a simpler sushi counter.</div>
           <div class="day-tags"><span class="dtag g">Fine Dining</span><span class="dtag">Street Food</span><span class="dtag g">Omakase</span></div>
         </div>
       </div>
@@ -1211,7 +1209,7 @@ body {
         <div class="day-body">
           <div class="day-city">Hakone Turnpike</div>
           <div class="day-title">🚗 GT-R / Mazda RX-7 Drive Day</div>
-          <div class="day-desc"><strong>BOOK 2–3 MONTHS AHEAD.</strong> Rent a <strong>Nissan GT-R R35</strong> or <strong>Mazda RX-7 FD</strong> (Spirit R if you're lucky) from <em>J-Dream</em> or <em>Prestige Motor Rent</em> in Tokyo. Drive the <strong>Hakone Turnpike</strong> — 10.3km of mountain switchbacks, no speed cameras, Fuji visible at the top on clear September mornings. Photo stop at Ōwakudani volcanic valley. Return via Izu Skyline for a second mountain road hit. Evening: check into a <strong>ryokan in Hakone</strong> for onsen recovery.</div>
+          <div class="day-desc"><strong>Book 2–3 months ahead.</strong> GT-R/RX-7 rental for Hakone Turnpike and Izu Skyline if available. End with a Hakone ryokan/onsen night.</div>
           <div class="day-tags"><span class="dtag r">🚗 GTR/RX-7</span><span class="dtag gr">Scenic Drive</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1221,7 +1219,7 @@ body {
         <div class="day-body">
           <div class="day-city">Hakone · Lake Ashi</div>
           <div class="day-title">Ryokan Morning, Fuji Reflections &amp; Ropeway</div>
-          <div class="day-desc">Private <strong>rotenburo</strong> (outdoor hot spring bath) at dawn — steam rising, forest silence. Hakone Ropeway over volcanic steam vents to the lakeside. <strong>Lake Ashi pirate ship cruise</strong> with Mt. Fuji reflection (clear September mornings are magic here). Visit the <strong>Hakone Open Air Museum</strong> — outdoor Picasso sculptures in mountain forest. Afternoon: drive or Romancecar train back to Tokyo.</div>
+          <div class="day-desc">Onsen morning, Hakone Ropeway, Lake Ashi, and Hakone Open Air Museum. Return to Tokyo in the afternoon.</div>
           <div class="day-tags"><span class="dtag gr">Onsen</span><span class="dtag r">Fuji View</span><span class="dtag r">Photo Spot</span><span class="dtag gr">Nature</span></div>
         </div>
       </div>
@@ -1231,7 +1229,7 @@ body {
         <div class="day-body">
           <div class="day-city">Shimokitazawa · Shibuya · Sangenjaya</div>
           <div class="day-title">Nujabes Pilgrimage + Tokyo's Underground</div>
-          <div class="day-desc">Morning: Shimokitazawa for vintage clothing stores (200+ shops), jazz clubs, indie theatre. Dig for vinyl at <strong>Face Records</strong> in Shibuya — personally recommended by Nujabes' brother as the best shop to find his style of music. Lunch: <strong>Usagi Ramen</strong> (📍 8-13 Shinsencho, Shibuya, near Shinsen Station) — run by <strong>Nujabes' younger brother</strong>, Nujabes music plays all day, the light shoyu ramen and truffle ramen are extraordinary. 12 counter seats, no artificial flavours. A true pilgrimage stop. Afternoon: Shimokitazawa record shops and coffee. Evening: <strong>Circus Tokyo</strong> (📍 3-26-16 Shibuya) — the club where Nujabes' collaborators and friends gather for tribute events. Check circus-tokyo.jp for underground hip-hop or lo-fi nights during your stay. Then Sangenjaya's dense izakaya alleyways for late-night horumon-yaki.</div>
+          <div class="day-desc">Shimokitazawa record/vintage shops, Face Records in Shibuya, Usagi Ramen, then Circus Tokyo if there is a relevant night on. Finish around Sangenjaya or Shibuya.</div>
           <div class="day-tags"><span class="dtag">🎵 Nujabes</span><span class="dtag">Local Gem</span><span class="dtag">Vintage</span><span class="dtag">Nightlife</span><span class="dtag">Music</span></div>
         </div>
       </div>
@@ -1242,7 +1240,7 @@ body {
       <div>
         <div class="pb-label">Phase 2 · Days 11–18 · Sep 25–Oct 2, 2026</div>
         <div class="pb-title">Tohoku &amp; Japanese Alps — Wild Japan</div>
-        <div class="pb-sub">Snow monkey valleys, Spirited Away onsen towns, sacred mountains, dramatic gorges — the Japan tourists miss.</div>
+        <div class="pb-sub">Snow monkeys, Ginzan Onsen, Yamadera, Matsushima, Naruko and Karuizawa.</div>
       </div>
       <div class="pb-days"><div class="big">8</div><div class="sm">Days</div></div>
     </div>
@@ -1252,8 +1250,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">11</span><span class="dr">Nikko</span></div>
         <div class="day-body">
           <div class="day-city">Nikkō, Tochigi</div>
-          <div class="day-title">Japan's Most Ornate Shrine + Waterfall</div>
-          <div class="day-desc"><strong>Tōshō-gū Shrine</strong> — layered gold, carved sleeping cat, three wise monkeys, ancient cedar forest. Mid-September the maples just begin to warm. Walk up to <strong>Kegon Falls</strong> (97m drop) through Chūzenji forest. Onsen at Nikko Kanaya Hotel — Japan's oldest mountain resort. Stay overnight or return to Tokyo for next day.</div>
+          <div class="day-title">Tōshō-gū Shrine + Kegon Falls</div>
+          <div class="day-desc">Tōshō-gū Shrine, the cedar forest, Kegon Falls and Chūzenji area. Stay overnight if the timing works; otherwise return to Tokyo.</div>
           <div class="day-tags"><span class="dtag t">Shrine</span><span class="dtag gr">Waterfall</span><span class="dtag r">Photo Spot</span><span class="dtag gr">Forest</span></div>
         </div>
       </div>
@@ -1263,7 +1261,7 @@ body {
         <div class="day-body">
           <div class="day-city">Ginzan Onsen · Yamadera</div>
           <div class="day-title">Spirited Away Onsen Town + Cliff Temple</div>
-          <div class="day-desc"><strong>Day 12:</strong> Yamadera (Risshaku-ji) — 1,000-year-old temple complex carved into a cliff, 1,015 stone steps to summit. The view over the valley is staggering. <strong>Day 13:</strong> <strong>Ginzan Onsen</strong> — a Taishō-era (1912) wooden ryokan village on a river gorge. Said to have visually inspired Spirited Away's spirit bathhouse town. Lanterns after dark, snow-ready wooden balconies, powerful rotenburo. Stay one night here — it's essential.</div>
+          <div class="day-desc"><strong>Day 12:</strong> Yamadera/Risshaku-ji, including the stone steps and valley view. <strong>Day 13:</strong> Ginzan Onsen for one night in the old ryokan town.</div>
           <div class="day-tags"><span class="dtag p">Spirited Away</span><span class="dtag gr">Onsen</span><span class="dtag t">Temple</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1273,7 +1271,7 @@ body {
         <div class="day-body">
           <div class="day-city">Sendai, Miyagi</div>
           <div class="day-title">💻 Work Day in Tohoku's Capital</div>
-          <div class="day-desc">Sendai is large, modern and well-connected. Work from <strong>Mediatheque</strong> (stunning Toyo Ito–designed library with excellent wifi) or Sendai's excellent café scene. Lunch: <strong>gyūtan</strong> (grilled beef tongue) — Sendai's iconic dish, best at Rikyu or Tsuraya. Evening: Aoba Castle ruins for city views and the evening lit-up forest.</div>
+          <div class="day-desc">Work from Sendai Mediatheque or a central café. Lunch: gyūtan at Rikyu or Tsuraya. Evening: Aoba Castle ruins if there is time.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag">Sendai</span><span class="dtag">Gyūtan</span></div>
         </div>
       </div>
@@ -1283,7 +1281,7 @@ body {
         <div class="day-body">
           <div class="day-city">Matsushima · Naruko Onsen</div>
           <div class="day-title">Japan's "Top 3 Views" + Gorge Onsen</div>
-          <div class="day-desc"><strong>Day 15: Matsushima</strong> — one of Japan's classically celebrated three great views. 260 pine-cloaked islands in a blue bay, best by boat tour. Eat fresh oysters on the pier (September is prime oyster season). <strong>Day 16: Naruko Onsen Gorge</strong> — dramatic ravine of 100m canyon walls turning fiery red in mid-October. Traditional wooden kokeshi doll workshops. Small onsen town, very few foreign tourists.</div>
+          <div class="day-desc"><strong>Day 15:</strong> Matsushima by boat, with oysters on the pier. <strong>Day 16:</strong> Naruko Onsen Gorge, kokeshi workshops and an onsen night.</div>
           <div class="day-tags"><span class="dtag gr">Nature</span><span class="dtag r">Oysters</span><span class="dtag r">Photo Spot</span><span class="dtag gr">Autumn Leaves</span></div>
         </div>
       </div>
@@ -1293,7 +1291,7 @@ body {
         <div class="day-body">
           <div class="day-city">Jōshinetsu · Jigokudani</div>
           <div class="day-title">Snow Monkey Park + Karuizawa</div>
-          <div class="day-desc"><strong>Day 17: Jigokudani Monkey Park</strong> — wild Japanese macaques bathing in natural hot springs. October is perfect: steam, cooling air, red maple backdrop. Arrive by 7am for small crowds. Then <strong>Karuizawa</strong> — mountain resort town with Shiraito Falls (white-thread waterfall) and Old Karuizawa Shopping Street for local jams and craft beer. Stay overnight. <strong>Day 18:</strong> Nagano city — Zenkō-ji temple and connecting JR limited express toward Tokyo.</div>
+          <div class="day-desc"><strong>Day 17:</strong> Jigokudani Monkey Park, then Karuizawa for Shiraito Falls and Old Karuizawa. <strong>Day 18:</strong> Nagano city, Zenkō-ji and train connection toward Tokyo.</div>
           <div class="day-tags"><span class="dtag gr">Snow Monkeys</span><span class="dtag gr">Waterfall</span><span class="dtag gr">Onsen</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1304,7 +1302,7 @@ body {
       <div>
         <div class="pb-label">Phase 3 · Days 19–30 · Oct 3–14, 2026</div>
         <div class="pb-title">Kyoto, Nara &amp; Osaka — The Cultural Heart</div>
-        <div class="pb-sub">Ancient capitals, geisha districts, deer parks, samurai experiences, JJK filming locations, Dotonbori madness and the best food in the world.</div>
+        <div class="pb-sub">Kyoto base days, Nara, Osaka food, JJK/Naruto locations, and Kōya-san.</div>
       </div>
       <div class="pb-days"><div class="big">12</div><div class="sm">Days</div></div>
     </div>
@@ -1315,7 +1313,7 @@ body {
         <div class="day-body">
           <div class="day-city">Kyoto Station → Higashiyama</div>
           <div class="day-title">Arrive Kyoto — Ancient City First Walk</div>
-          <div class="day-desc">Shinkansen from Tokyo in 2h15m. Check into <strong>Aman Kyoto</strong> (for luxury) or a machiya townhouse ryokan in Higashiyama. Afternoon: walk <strong>Sannenzaka and Ninenzaka</strong> stone cobble lanes — the most photogenic streets in Japan, flanked by matcha shops and lacquer ware. Sunset: <strong>Kōdai-ji Temple illumination</strong> if timed right (begins late September/October) — lit maples, koi pond reflections.</div>
+          <div class="day-desc">Shinkansen from Tokyo to Kyoto. Check in around Higashiyama, then walk Sannenzaka, Ninenzaka and Kōdai-ji if the illumination is running.</div>
           <div class="day-tags"><span class="dtag r">Photo Spot</span><span class="dtag t">Temple</span><span class="dtag">Arrival Kyoto</span></div>
         </div>
       </div>
@@ -1325,7 +1323,7 @@ body {
         <div class="day-body">
           <div class="day-city">Fushimi · Uji · Nishiki</div>
           <div class="day-title">Jujutsu Kaisen Pilgrimage Day 1</div>
-          <div class="day-desc"><strong>Fushimi Inari Taisha</strong> — 10,000 vermilion torii gates winding up a mountain. This is the direct visual reference for JJK's domain barriers and Inari-themed curse scenes. Go at 5–6am for empty gates. Walk the full 4km mountain loop. Afternoon: <strong>Uji</strong> — matcha capital of Japan, and location of Jōdō-in temple and Byōdō-in which appear in JJK backgrounds. Try uji matcha soft serve. <strong>Nishiki Market</strong> ("Kyoto's kitchen") for street snacks: octopus skewers, pickles, tofu doughnuts.</div>
+          <div class="day-desc">Fushimi Inari early, then Uji for Byōdō-in, Jōdō-in and matcha. Finish with Nishiki Market snacks in Kyoto.</div>
           <div class="day-tags"><span class="dtag p">JJK Location</span><span class="dtag p">Fushimi Inari</span><span class="dtag r">Photo Spot</span><span class="dtag">Street Food</span></div>
         </div>
       </div>
@@ -1334,8 +1332,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">21</span><span class="dr">JJK+Naruto</span></div>
         <div class="day-body">
           <div class="day-city">Arashiyama · Sagano</div>
-          <div class="day-title">Bamboo Forest + Naruto Forest Energy</div>
-          <div class="day-desc"><strong>Arashiyama Bamboo Grove</strong> — the narrow path through towering green bamboo is hauntingly similar to training sequences from Naruto's forest arcs. 5am entry for zero crowds and ethereal light. <strong>Tenryū-ji garden</strong> — Zen garden with autumn maples. Boat ride on Ōi River through the Sagano gorge. Lunch: fresh yudōfu (tofu hot pot) in Arashiyama. Visit <strong>Ōkōchi Sansō Villa</strong> for the highest bamboo/maple overlook in Kyoto. Evening: Gion district for geiko spotting on Hanamikōji Street.</div>
+          <div class="day-title">Arashiyama Bamboo Grove</div>
+          <div class="day-desc">Arashiyama Bamboo Grove, Tenryū-ji, Ōi River, yudōfu lunch and Ōkōchi Sansō Villa. Evening in Gion if there is energy.</div>
           <div class="day-tags"><span class="dtag p">Naruto Vibes</span><span class="dtag gr">Bamboo Forest</span><span class="dtag r">Photo Spot</span><span class="dtag t">Zen Garden</span></div>
         </div>
       </div>
@@ -1345,7 +1343,7 @@ body {
         <div class="day-body">
           <div class="day-city">Gion · Higashiyama · Philosopher's Path</div>
           <div class="day-title">Private Samurai Sword Experience + Philosopher's Path</div>
-          <div class="day-desc">Morning: <strong>Private Iaido (sword-drawing) session</strong> with a Kyoto dojo — 2-hour class, full-length practice sword, traditional dojo. Some include tameshigiri (test cutting). Book via cultural concierge apps. Afternoon: <strong>Philosopher's Path</strong> — canal-side walk through Nanzen-ji, Eikan-dō, and Hōnen-in. October is when the maple tunnels begin to turn. Evening: kaiseki dinner at a Gion ryōtei restaurant.</div>
+          <div class="day-desc">Private iaido session if booked, then Philosopher's Path, Nanzen-ji, Eikan-dō and Hōnen-in. Kaiseki dinner in Gion if budget allows.</div>
           <div class="day-tags"><span class="dtag r">Samurai</span><span class="dtag gr">Autumn Walk</span><span class="dtag g">Fine Dining</span><span class="dtag t">Temples</span></div>
         </div>
       </div>
@@ -1355,7 +1353,7 @@ body {
         <div class="day-body">
           <div class="day-city">Kyoto Station Area · Fōramu</div>
           <div class="day-title">💻 Work Day — Kyoto Mid-Point Base</div>
-          <div class="day-desc">Work from <strong>Kyoto Station's Isetan Building café floors</strong> or the stunning <strong>T's Garden Kyoto</strong>. Alternatively: Wife and Husband café in Kuramaguchi (legendary macchiatos, quiet). Lunch break: wander to Nishiki Market for quick bites. Evening reward: Fushimi Inari gates at dusk (walk a shorter 30-min loop). Book tomorrow's activities.</div>
+          <div class="day-desc">Work from Kyoto Station cafés or T's Garden Kyoto. Nishiki Market for lunch. Short Fushimi Inari loop at dusk if wanted.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag">Kyoto</span><span class="dtag">Café</span></div>
         </div>
       </div>
@@ -1365,7 +1363,7 @@ body {
         <div class="day-body">
           <div class="day-city">Kinkaku-ji · Ryōan-ji · Nijo</div>
           <div class="day-title">Golden Pavilion, Zen Rock Garden &amp; Shogun Castle</div>
-          <div class="day-desc">7am: <strong>Kinkaku-ji</strong> (Golden Pavilion) — open at 9am but be there for opening. The pavilion reflected in the mirror pond with early autumn colour is among Japan's most iconic images. <strong>Ryōan-ji</strong> — Japan's greatest rock garden, 15 stones, meaning debated for 500 years. <strong>Nijō Castle</strong> — shogunate residence with nightingale floors and sprawling autumn garden. Evening: <em>Kyoto Night Illumination</em> at Tōfuku-ji (book ahead — limited tickets, begins mid-October).</div>
+          <div class="day-desc">Kinkaku-ji at opening, then Ryōan-ji and Nijō Castle. Evening illumination at Tōfuku-ji if dates and tickets line up.</div>
           <div class="day-tags"><span class="dtag r">Photo Spot</span><span class="dtag t">Temple</span><span class="dtag">UNESCO</span><span class="dtag gr">Autumn</span></div>
         </div>
       </div>
@@ -1375,7 +1373,7 @@ body {
         <div class="day-body">
           <div class="day-city">Nara Park · Yoshino</div>
           <div class="day-title">Sacred Deer, Daibutsu &amp; Mountain Temple Forest</div>
-          <div class="day-desc">Day trip from Kyoto (45 min). <strong>Nara Park</strong> — 1,300 wild sika deer roam freely, bowing for crackers. <strong>Tōdai-ji</strong> — the world's largest wooden structure housing a 15-metre bronze Buddha, casting autumn shadow through stone lanterns. <strong>Kasuga Taisha</strong> — thousands of stone and bronze lanterns in forest clearing. If time: head to <strong>Yoshino</strong> (extra 1h) — mountain with 30,000 cherry/maple trees on cascading ridges, spectacular autumn colour.</div>
+          <div class="day-desc">Day trip from Kyoto: Nara Park, Tōdai-ji and Kasuga Taisha. Add Yoshino only if the day still feels manageable.</div>
           <div class="day-tags"><span class="dtag gr">Deer Park</span><span class="dtag t">Daibutsu</span><span class="dtag gr">Forest Shrine</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1385,7 +1383,7 @@ body {
         <div class="day-body">
           <div class="day-city">Kyoto → Osaka</div>
           <div class="day-title">Move to Osaka + JJK: Yasaka Shrine</div>
-          <div class="day-desc">Morning: <strong>Yasaka Shrine</strong> in Gion — heavily featured in Jujutsu Kaisen (the Kyoto school storyline, Gojo's domain scenes and the overall "cursed spirits of ancient Kyoto" aesthetic originate here). Its stone lanterns, ancient torii, and stone steps through cryptomeria trees are unmistakable. Midday: Shinkansen or rapid train to Osaka (15 min). Check in near Dotonbori. Evening: Dotonbori street food immersion — takoyaki, okonomiyaki, kushikatsu.</div>
+          <div class="day-desc">Yasaka Shrine in the morning, then train to Osaka and check in near Namba/Dotonbori. Evening: takoyaki, okonomiyaki and kushikatsu.</div>
           <div class="day-tags"><span class="dtag p">JJK Location</span><span class="dtag t">Yasaka Shrine</span><span class="dtag">Street Food</span><span class="dtag">Osaka</span></div>
         </div>
       </div>
@@ -1395,7 +1393,7 @@ body {
         <div class="day-body">
           <div class="day-city">Osaka</div>
           <div class="day-title">Osaka: Street Food Capital + Culture</div>
-          <div class="day-desc"><strong>Day 27:</strong> Kuromon Ichiba Market (the "Osaka kitchen") for fresh uni, Wagyu, crab. <strong>Osaka Castle</strong> with autumn maple garden. Shinsekai district — retro 1950s neon, kushikatsu fry bars. Evening: world-class ramen at <strong>Ichiran or Kinryu</strong>. <strong>Day 28:</strong> Dotonbori canal walk, Shinsaibashi shopping, Amerikamura vintage shops. Lunch: okonomiyaki at Mizuno (since 1945). Evening: Namba's underground bar scene — jazz bars, craft beer, shochu bars. Try <em>fugu</em> (blowfish) at a specialist restaurant.</div>
+          <div class="day-desc"><strong>Day 27:</strong> Kuromon Ichiba, Osaka Castle and Shinsekai. <strong>Day 28:</strong> Dotonbori, Shinsaibashi, Amerikamura and okonomiyaki at Mizuno. Optional fugu dinner.</div>
           <div class="day-tags"><span class="dtag">Street Food</span><span class="dtag t">Castle</span><span class="dtag g">Fugu</span><span class="dtag">Nightlife</span></div>
         </div>
       </div>
@@ -1405,7 +1403,7 @@ body {
         <div class="day-body">
           <div class="day-city">Osaka</div>
           <div class="day-title">💻 Work Day — Osaka Base</div>
-          <div class="day-desc">Work from <strong>CACAO OR DEUX MAGOTS Osaka</strong> or one of Nakanoshima island's excellent café spaces. The <strong>Nakanoshima Library</strong> (1904 neo-classical building) has a café and wifi — stunning interior. Lunch break: sushi conveyor belt, the best in the world here. Evening: Tsūtenkaku Tower area (Tennoji) or the <strong>Abeno Harukas</strong> 300m observatory for a very different view of the city.</div>
+          <div class="day-desc">Work from Nakanoshima or a central Osaka café. Lunch nearby, then Tsūtenkaku/Tennoji or Abeno Harukas in the evening.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag">Nakanoshima</span><span class="dtag">Osaka</span></div>
         </div>
       </div>
@@ -1414,8 +1412,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">30</span><span class="dr">Kōya-san</span></div>
         <div class="day-body">
           <div class="day-city">Kōya-san, Wakayama</div>
-          <div class="day-title">Sacred Mountain: Buddhism's Most Powerful Place</div>
-          <div class="day-desc">Day trip or overnight from Osaka (1h45m by Nankai Rail). <strong>Ōkunoin Cemetery</strong> — 200,000 moss-covered stone lanterns and tombstones of samurai lords in ancient cedar forest. The most spiritually powerful place in Japan. Walk the 2km cemetery path at dusk when lanterns glow. <strong>Kongōbu-ji Temple</strong> — the head temple of Shingon Buddhism with Japan's largest rock garden. Stay overnight in a <em>shukubō</em> (temple lodging) and attend 6am morning prayer service.</div>
+          <div class="day-title">Kōya-san Temple Stay</div>
+          <div class="day-desc">Day trip or overnight from Osaka. Visit Ōkunoin Cemetery and Kongōbu-ji. If staying overnight, book shukubō temple lodging and attend morning prayers.</div>
           <div class="day-tags"><span class="dtag gr">Sacred Forest</span><span class="dtag t">Buddhism</span><span class="dtag r">Photo Spot</span><span class="dtag">Temple Stay</span></div>
         </div>
       </div>
@@ -1426,7 +1424,7 @@ body {
       <div>
         <div class="pb-label">Phase 4 · Days 31–38 · Oct 15–22, 2026</div>
         <div class="pb-title">Hiroshima, Miyajima, Shikoku &amp; Ise</div>
-        <div class="pb-sub">Floating torii gates, pilgrimage trails, ancient shrines, Naruto whirlpools and Japan's most moving memorial.</div>
+        <div class="pb-sub">Hiroshima, Miyajima, Matsuyama, Naruto whirlpools, Ise and the route back toward Tokyo.</div>
       </div>
       <div class="pb-days"><div class="big">8</div><div class="sm">Days</div></div>
     </div>
@@ -1436,8 +1434,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">31</span><span class="dr">Hiroshima</span></div>
         <div class="day-body">
           <div class="day-city">Hiroshima · Peace Memorial</div>
-          <div class="day-title">The Most Important Day of the Trip</div>
-          <div class="day-desc"><strong>Peace Memorial Park and Museum</strong> — allow 3–4 hours, unhurried. The A-Bomb Dome ruin, the Children's Peace Monument, the museum's personal objects of those lost. A singular experience that reframes everything. Afternoon: walk Hiroshima's excellent food scene — <strong>Hiroshima-style okonomiyaki</strong> with noodles inside (completely different from Osaka style) at Micchan or Hassho. Shukkei-en Garden for late-autumn evening walk.</div>
+          <div class="day-title">Peace Memorial Park + Hiroshima Food</div>
+          <div class="day-desc">Peace Memorial Park and Museum in the morning/early afternoon. Later: Hiroshima-style okonomiyaki at Micchan or Hassho, then Shukkei-en Garden if there is time.</div>
           <div class="day-tags"><span class="dtag">Memorial</span><span class="dtag">Street Food</span><span class="dtag blue">History</span></div>
         </div>
       </div>
@@ -1447,7 +1445,7 @@ body {
         <div class="day-body">
           <div class="day-city">Miyajima Island</div>
           <div class="day-title">The Floating Torii Gate at Dawn</div>
-          <div class="day-desc">Ferry from Hiroshima to <strong>Itsukushima</strong> (Miyajima). Stay overnight on the island — when day-trippers leave, you have the floating vermilion O-torii gate almost to yourself at sunrise. Walk to it at low tide on the mudflat. <strong>Itsukushima Shrine</strong> (UNESCO) with autumn leaves. Hike Mt. Misen (535m) through primeval forest to the highest viewpoint in the Seto Inland Sea. Deer wander the island freely. Try grilled momiji-manju (maple-leaf shaped cakes).</div>
+          <div class="day-desc">Ferry to Miyajima. Stay overnight if possible for quieter shrine time. Visit Itsukushima Shrine, walk to the torii at low tide, hike Mt. Misen if weather allows, and try momiji-manju.</div>
           <div class="day-tags"><span class="dtag gr">Island</span><span class="dtag r">Torii Gate</span><span class="dtag r">Photo Spot</span><span class="dtag gr">Hike</span></div>
         </div>
       </div>
@@ -1457,7 +1455,7 @@ body {
         <div class="day-body">
           <div class="day-city">Matsuyama, Ehime · Shikoku</div>
           <div class="day-title">💻 Work Day — Dōgo Onsen Town</div>
-          <div class="day-desc">Ferry or ferry+train to Matsuyama, Shikoku's largest city. Work from a café near the station. Afternoon break: <strong>Matsuyama Castle</strong> (one of Japan's 12 original castles, brilliant autumn views from the ropeway). Evening reward: <strong>Dōgo Onsen Honkan</strong> — Japan's oldest hot spring bathhouse (3,000 years), the direct inspiration for the bathhouse in Spirited Away. Soak in the ancient baths. Stay in Matsuyama ryokan.</div>
+          <div class="day-desc">Travel to Matsuyama and work from a café near the station. Later: Matsuyama Castle and Dōgo Onsen Honkan.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag p">Spirited Away</span><span class="dtag gr">Onsen</span><span class="dtag t">Castle</span></div>
         </div>
       </div>
@@ -1467,7 +1465,7 @@ body {
         <div class="day-body">
           <div class="day-city">Naruto City, Tokushima</div>
           <div class="day-title">Naruto Whirlpools — The City That Shares the Name</div>
-          <div class="day-desc"><strong>Naruto, Tokushima</strong> — the actual city that inspired the whirlpool symbolism in Naruto (and the "Naruto Uzumaki" spirals are literally based on the naruto fish-cake swirl pattern). Take a <strong>sightseeing boat under the Ōnaruto Bridge</strong> to watch the giant tidal whirlpools — up to 20m across during spring tides. The Onaruto Bridge glass walkway over the whirlpools is spectacular. <strong>2026 calendar note:</strong> this lands on Sunday Oct 18, the same date as Tokyo Legacy Half Marathon 2026. If we get race entry, this stop shifts and the weekend becomes Tokyo.</div>
+          <div class="day-desc">Naruto whirlpool boat and Ōnaruto Bridge walkway. <strong>2026 calendar note:</strong> this lands on Sunday Oct 18, the same date as Tokyo Legacy Half Marathon 2026. If race entry happens, this stop shifts.</div>
           <div class="day-tags"><span class="dtag p">Naruto Inspired</span><span class="dtag gr">Whirlpools</span><span class="dtag r">Photo Spot</span><span class="dtag">Local Gem</span><span class="dtag r">Half Marathon Pivot</span></div>
         </div>
       </div>
@@ -1476,8 +1474,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">35–36</span><span class="dr">Ise</span></div>
         <div class="day-body">
           <div class="day-city">Ise, Mie Prefecture</div>
-          <div class="day-title">Ise Grand Shrine — Japan's Most Sacred Place</div>
-          <div class="day-desc"><strong>Ise Jingū</strong> — holiest Shinto site in Japan, dedicated to Amaterasu, the sun goddess. Rebuilt every 20 years in the exact same ancient cypress-wood style — the deepest forest shrine in the country. Walk Oharaimachi Street's Edo-period merchant street for <strong>akafuku mochi</strong> (red bean rice cakes made since 1707). <strong>Day 36:</strong> Ago Bay and <strong>Ise-Shima National Park</strong> — pearl cultivation bays, dramatic coastline, fresh abalone and lobster at ama diver seafood restaurants. Kayak the inlet.</div>
+          <div class="day-title">Ise Grand Shrine + Ise-Shima</div>
+          <div class="day-desc"><strong>Day 35:</strong> Ise Jingū and Oharaimachi Street. <strong>Day 36:</strong> Ago Bay and Ise-Shima National Park, with seafood or kayaking depending on weather.</div>
           <div class="day-tags"><span class="dtag t">Holiest Shrine</span><span class="dtag gr">Ancient Forest</span><span class="dtag">Seafood</span><span class="dtag gr">National Park</span></div>
         </div>
       </div>
@@ -1487,7 +1485,7 @@ body {
         <div class="day-body">
           <div class="day-city">Return Route → Tokyo</div>
           <div class="day-title">💻 Transit Work Days</div>
-          <div class="day-desc">Travel back toward Tokyo via Shinkansen. Use the bullet train's quiet cars and reliable wifi for work. Stopover option: <strong>Nagoya</strong> for a night — visit Nagoya Castle, eat <em>hitsumabushi</em> (grilled eel over rice, one of Japan's best dishes) and Nagoya's fiery miso-based everything. Or push through to Tokyo to set up for the final Hokkaido sprint.</div>
+          <div class="day-desc">Travel back toward Tokyo by train and use the transit time for work. Optional Nagoya stop for castle, hitsumabushi and a slower return.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag">Transit</span><span class="dtag">Nagoya</span></div>
         </div>
       </div>
@@ -1498,7 +1496,7 @@ body {
       <div>
         <div class="pb-label">Phase 5 · Days 39–45 · Oct 23–29, 2026</div>
         <div class="pb-title">Hokkaido — Japan's Wild North</div>
-        <div class="pb-sub">Late October in Hokkaido is peak autumn. Volcanic calderas, bear-watching, ramen that defines the genre, and Japan's most dramatic wilderness.</div>
+        <div class="pb-sub">Sapporo, Daisetsuzan, Lake Tōya, Noboribetsu and Otaru before the blank-day block.</div>
       </div>
       <div class="pb-days"><div class="big">7</div><div class="sm">Days</div></div>
     </div>
@@ -1509,7 +1507,7 @@ body {
         <div class="day-body">
           <div class="day-city">Sapporo, Hokkaido</div>
           <div class="day-title">Hokkaido Capital — Ramen Alley &amp; Autumn Parks</div>
-          <div class="day-desc">Fly from Tokyo to Sapporo New Chitose (1.5hr). <strong>Susukino Ramen Alley (Rāmen Yokochō)</strong> — the original, the real deal. Sapporo miso ramen with corn and butter in narrow lantern-lit alley. Day 40: <strong>Maruyama Park</strong> and Hokkaido Jingu Shrine — deep autumn forest, red maple carpet. <strong>Sapporo Beer Museum</strong> (Hokkaido's first brewery, 1876). Evening: live seafood at Nijo Fish Market — king crab, sea urchin, scallops, all extraordinary in Hokkaido.</div>
+          <div class="day-desc">Fly Tokyo to Sapporo. Ramen Alley on arrival. Day 40: Maruyama Park, Hokkaido Jingu, Sapporo Beer Museum and seafood at Nijo Fish Market.</div>
           <div class="day-tags"><span class="dtag">Ramen Alley</span><span class="dtag gr">Autumn Park</span><span class="dtag g">King Crab</span><span class="dtag gr">Shrine</span></div>
         </div>
       </div>
@@ -1518,8 +1516,8 @@ body {
         <div class="day-num"><span class="dl">Day</span><span class="dn">41–42</span><span class="dr">Nature</span></div>
         <div class="day-body">
           <div class="day-city">Daisetsuzan · Asahikawa</div>
-          <div class="day-title">Japan's Wildest National Park — Peak Autumn</div>
-          <div class="day-desc"><strong>Daisetsuzan National Park</strong> — Japan's largest national park, 2,290m volcanic peaks, alpine lakes, bear habitat, and the most dramatic autumn foliage colour in the country (peak: mid-to-late October). Take the <strong>Asahidake Ropeway</strong> into the high volcanic plateau. Hike Asahidake peak for volcanic steam vents and 360° coloured mountain views. Kurodake trail for deep forest paths. Stay at <strong>Asahidake Onsen</strong> — soaking in outdoor baths while forest steams around you is transcendent.</div>
+          <div class="day-title">Daisetsuzan National Park</div>
+          <div class="day-desc">Daisetsuzan National Park, Asahidake Ropeway, short hikes around the volcanic plateau and an Asahidake Onsen stay.</div>
           <div class="day-tags"><span class="dtag gr">Wildest Nature</span><span class="dtag gr">Peak Autumn</span><span class="dtag gr">Volcano</span><span class="dtag gr">Onsen</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1529,7 +1527,7 @@ body {
         <div class="day-body">
           <div class="day-city">Lake Tōya · Noboribetsu</div>
           <div class="day-title">Volcanic Caldera Lake + Hell Valley Onsen</div>
-          <div class="day-desc"><strong>Lake Tōya</strong> — a perfectly circular volcanic caldera lake with an island in the centre. Crystal clear blue water, Mt. Yōtei (Hokkaido's Fuji) visible from the shore. Afternoon: <strong>Noboribetsu</strong> — Japan's most impressive onsen resort with Jigokudani ("Hell Valley"), a volcanic crater oozing sulphurous steam. Multiple different mineral baths in one ryokan — the variety of water types is found nowhere else. Stay overnight.</div>
+          <div class="day-desc">Lake Tōya in the morning, then Noboribetsu/Jigokudani and an onsen overnight.</div>
           <div class="day-tags"><span class="dtag gr">Caldera Lake</span><span class="dtag gr">Hell Valley</span><span class="dtag gr">Onsen</span><span class="dtag r">Photo Spot</span></div>
         </div>
       </div>
@@ -1539,7 +1537,7 @@ body {
         <div class="day-body">
           <div class="day-city">Otaru · Hokkaido</div>
           <div class="day-title">💻 Final Work Day — Canal Port Town</div>
-          <div class="day-desc"><strong>Otaru</strong> — charming Meiji-era canal port town, 40 min from Sapporo. Lovely stone warehouses, glass craft workshops, and the best sushi outside of Tokyo (Hokkaido's fish is unmatched). Work from one of the canal-side cafés. Lunch: fresh uni donburi. Afternoon: Otaru Music Box Museum, Kitaichi Glass (handmade Hokkaido glassware). Evening: back to Sapporo for final night dinner.</div>
+          <div class="day-desc">Work from an Otaru canal-side café. Lunch: uni or sushi. Afternoon: Music Box Museum, Kitaichi Glass and return to Sapporo for the final night.</div>
           <div class="day-tags"><span class="dtag g">Work Day</span><span class="dtag">Canal Town</span><span class="dtag g">Uni Sushi</span><span class="dtag">Local Gem</span></div>
         </div>
       </div>
@@ -1547,10 +1545,157 @@ body {
       <div class="day-row big-day">
         <div class="day-num"><span class="dl">Day</span><span class="dn">45</span><span class="dr">Final</span></div>
         <div class="day-body">
-          <div class="day-city">Sapporo → New Chitose / Tokyo connection → Lisbon</div>
-          <div class="day-title">Final Japan Morning + Return Flight Handoff</div>
-          <div class="day-desc">Final Japan morning: Sapporo's <strong>Odori Park</strong> one last time — long tree-lined boulevard through the city centre, blazing orange and red in late October. Pick up last omiyage: Hokkaido butter cookies, Shiroi Koibito, and Hokkaido cheese. Head to New Chitose Airport early. The onward <strong>flight back to Lisbon</strong> is the return-travel handoff and sits outside the 45-day Japan count, just like Day 0.</div>
-          <div class="day-tags"><span class="dtag gr">Final Japan Day</span><span class="dtag">Return to Lisbon</span><span class="dtag">Outside Count After Departure</span></div>
+          <div class="day-city">Sapporo / Otaru · Flexible</div>
+          <div class="day-title">Final Planned Hokkaido Day</div>
+          <div class="day-desc">Easy Sapporo/Otaru buffer day. Use it to recover, catch up on work, shop, or reposition before the 15 blank days.</div>
+          <div class="day-tags"><span class="dtag gr">Planned Route</span><span class="dtag">Sapporo</span><span class="dtag">Buffer</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 6 -->
+    <div class="phase-banner gold-accent">
+      <div>
+        <div class="pb-label">Phase 6 · Days 46–60 · Oct 30–Nov 13, 2026</div>
+        <div class="pb-title">Blank Days — Add Later</div>
+        <div class="pb-sub">Open slots for activities, reroutes, rest days or places you decide on later.</div>
+      </div>
+      <div class="pb-days"><div class="big">15</div><div class="sm">Blank</div></div>
+    </div>
+
+    <div class="days-stack">
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">46</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Fri Oct 30 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">47</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Sat Oct 31 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">48</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Sun Nov 1 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">49</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Mon Nov 2 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">50</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Tue Nov 3 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">51</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Wed Nov 4 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">52</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Thu Nov 5 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">53</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Fri Nov 6 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">54</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Sat Nov 7 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">55</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Sun Nov 8 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">56</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Mon Nov 9 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">57</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Tue Nov 10 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">58</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Wed Nov 11 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">59</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Thu Nov 12 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
+        </div>
+      </div>
+
+      <div class="day-row flex-day">
+        <div class="day-num"><span class="dl">Day</span><span class="dn">60</span><span class="dr">Blank</span></div>
+        <div class="day-body">
+          <div class="day-city">Fri Nov 13 · Open</div>
+          <div class="day-title">Blank Activity Slot</div>
+          <div class="day-desc">TBD.</div>
         </div>
       </div>
     </div>
@@ -1565,9 +1710,9 @@ body {
     <div class="sec-header">
       <div class="sec-num">02</div>
       <div class="sec-titles">
-        <span class="sec-label">Must-Do</span>
-        <h2>Big Bucket-List<br>Experiences</h2>
-        <p class="sec-sub">The non-negotiables. Book these 2–3 months in advance — some sell out entirely or require concierge arrangements.</p>
+        <span class="sec-label">Book Ahead</span>
+        <h2>Big Experiences</h2>
+        <p class="sec-sub">High-cost or limited-capacity items to book before the trip.</p>
       </div>
     </div>
 
@@ -1577,7 +1722,7 @@ body {
         <span class="bc-icon">🚗</span>
         <div class="bc-when">Day 8 · Hakone</div>
         <div class="bc-title">Rent a Nissan GT-R R35 or Mazda RX-7 FD</div>
-        <div class="bc-desc">Drive Japan's most legendary JDM cars on mountain roads designed for them. <strong>Hakone Turnpike</strong>: 10.3km of pure switchbacks, no speed traps on the toll section. Mt. Fuji visible from the summit on clear September mornings. Operators: <em>J-Dream</em>, <em>Prestige Motor Rent</em>, <em>Liberty Walk</em> car rental. Book 2–3 months early. Full-day rental ¥80,000–200,000 depending on model. Also consider the <strong>Izu Skyline</strong> route (35km ridge road, more remote).</div>
+        <div class="bc-desc">Rent a GT-R/RX-7 for Hakone Turnpike and, if time allows, Izu Skyline. Operators to check: <em>J-Dream</em>, <em>Prestige Motor Rent</em>, <em>Liberty Walk</em>. Book 2–3 months early. Budget ¥80,000–200,000 depending on model.</div>
         <div class="bc-where">📍 Tokyo pickup → Hakone Turnpike → Izu Skyline</div>
       </div>
 
@@ -1585,7 +1730,7 @@ body {
         <span class="bc-icon">🚁</span>
         <div class="bc-when">Day 4 · Odaiba</div>
         <div class="bc-title">Helicopter Tour over Tokyo at Sunset</div>
-        <div class="bc-desc">Book the sunset slot from <strong>Odaiba Heliport</strong> with Nakanihon Air or Noevir Helicopters. 20–30 minute flight over Shinjuku skyline, Rainbow Bridge, Tokyo Bay. On clear September evenings, Mt. Fuji appears on the western horizon. Cost: ¥35,000–60,000/person. The view of Tokyo's scale from above — 14 million people, endless neon, highway loops — is humbling. Book 1–2 months ahead.</div>
+        <div class="bc-desc">Book a 20–30 minute sunset flight from Odaiba Heliport with Nakanihon Air or Noevir Helicopters. Route typically covers Shinjuku, Rainbow Bridge and Tokyo Bay. Budget ¥35,000–60,000/person. Book 1–2 months ahead.</div>
         <div class="bc-where">📍 Odaiba Heliport, Minato Ward</div>
       </div>
 
@@ -1593,7 +1738,7 @@ body {
         <span class="bc-icon">🏔️</span>
         <div class="bc-when">Days 41–42 · Hokkaido</div>
         <div class="bc-title">Daisetsuzan Peak Autumn Hike</div>
-        <div class="bc-desc">Japan's largest and wildest national park. Take the Asahidake Ropeway to 1,600m, then hike the volcanic plateau as Japan's earliest autumn colour blazes below (mid-October, peak). Steam vents, bear warning signs, empty trails. Stay at Asahidake Onsen at the foot — outdoor baths, forest silence, zero crowds. The most dramatic natural experience in Japan in autumn.</div>
+        <div class="bc-desc">Take the Asahidake Ropeway to the volcanic plateau and do a weather-appropriate hike. Stay at Asahidake Onsen if lodging works. Best timing is mid-to-late October.</div>
         <div class="bc-where">📍 Higashikawa, Hokkaido</div>
       </div>
 
@@ -1601,15 +1746,15 @@ body {
         <span class="bc-icon">⛩️</span>
         <div class="bc-when">Day 20 · Kyoto</div>
         <div class="bc-title">Fushimi Inari at 5am</div>
-        <div class="bc-desc">The 10,000 vermilion torii gates at dawn with zero crowds — maybe 3–4 people on the mountain path. Walk the full 4km loop to the summit. The gates narrow, the light filters orange-red, foxes occasionally appear on the path. JJK fans: this is the closest real-world equivalent to domain expansion visual design. Bring a headlamp for the first 30 minutes.</div>
+        <div class="bc-desc">Go early if you want the gates quiet. Walk the full 4km loop if energy allows. Bring a headlamp if arriving before sunrise.</div>
         <div class="bc-where">📍 Fushimi Ward, Kyoto</div>
       </div>
 
       <div class="big-card">
         <span class="bc-icon">🥢</span>
         <div class="bc-when">Day 7 · Tokyo</div>
-        <div class="bc-title">Omakase Sushi: Full Michelin Experience</div>
-        <div class="bc-desc">Book <strong>Sushi Yoshitake</strong> (3-star, intimate 7-seat counter), <strong>Harutaka</strong>, or <strong>Sushi Sho</strong> — Tokyo's legendary counter sushi in a city where sushi is a performing art. 15–20 courses, chef selects everything. Book via <em>Tableall</em> or <em>Omakase</em> apps 2–3 months ahead. Budget ¥40,000–70,000. The absolute pinnacle of Japanese cuisine in 90 minutes.</div>
+        <div class="bc-title">Omakase Sushi</div>
+        <div class="bc-desc">Targets: Sushi Yoshitake, Harutaka or Sushi Sho. Book via <em>Tableall</em> or <em>Omakase</em> 2–3 months ahead. Budget ¥40,000–70,000.</div>
         <div class="bc-where">📍 Ginza or Akasaka, Tokyo</div>
       </div>
 
@@ -1617,7 +1762,7 @@ body {
         <span class="bc-icon">⚔️</span>
         <div class="bc-when">Day 22 · Kyoto</div>
         <div class="bc-title">Private Iaido Samurai Sword Class</div>
-        <div class="bc-desc">Book a private 2-hour Iaido session (居合道 — the art of drawing and striking) with a Kyoto dojo. Some include a tameshigiri (test-cutting on tatami targets). Full costume, bokken, and finally a live blade. Deeply tied to the anime samurai tradition Naruto and JJK both reference. Book via <em>Viator</em> or <em>Airbnb Experiences</em> Kyoto. ¥8,000–20,000.</div>
+        <div class="bc-desc">Book a private 2-hour iaido session with a Kyoto dojo. Some include tameshigiri. Check Viator, Airbnb Experiences or local cultural booking platforms. Budget ¥8,000–20,000.</div>
         <div class="bc-where">📍 Budo dojo, central Kyoto</div>
       </div>
 
@@ -1625,7 +1770,7 @@ body {
         <span class="bc-icon">🌊</span>
         <div class="bc-when">Day 34 · Tokushima</div>
         <div class="bc-title">Naruto Whirlpool Boat Tour</div>
-        <div class="bc-desc">Take a sightseeing vessel under the <strong>Ōnaruto Bridge</strong> to witness tidal whirlpools up to 20m across. The city of Naruto directly inspired the anime's swirl motif and Naruto Uzumaki's surname. The glass-floored walkway on the bridge lets you watch the whirlpools form beneath your feet. A deeply satisfying pilgrimage moment for any Naruto fan.</div>
+        <div class="bc-desc">Take the sightseeing boat under Ōnaruto Bridge, then add the bridge walkway if timing works. Check tide times before booking.</div>
         <div class="bc-where">📍 Naruto City, Tokushima, Shikoku</div>
       </div>
 
@@ -1633,7 +1778,7 @@ body {
         <span class="bc-icon">🦀</span>
         <div class="bc-when">Day 39–40 · Hokkaido</div>
         <div class="bc-title">Live King Crab at Nijo Fish Market</div>
-        <div class="bc-desc">Sapporo's Nijo Market — pick a live hairy crab or king crab from the tank, watch it cooked, eat it at the counter. Combined with fresh uni (sea urchin) and Hokkaido scallops grilled on charcoal. This is the finest seafood in Japan and among the best anywhere in the world. Best in October when crab season is in full swing.</div>
+        <div class="bc-desc">Nijo Market seafood lunch: crab, uni, scallops or a simpler donburi depending on budget and appetite. October is good timing for Hokkaido seafood.</div>
         <div class="bc-where">📍 Nijo Market, Sapporo</div>
       </div>
 
@@ -1658,7 +1803,7 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Naruto · Jujutsu Kaisen</span>
         <h2>Anime Pilgrimages<br>&amp; Locations</h2>
-        <p class="sec-sub">Real places that inspired, directly appeared in, or are spiritually connected to Naruto and Jujutsu Kaisen — plus where to find the best merch.</p>
+        <p class="sec-sub">Anime-related stops, filming/reference locations, and merch areas.</p>
       </div>
     </div>
 
@@ -1668,63 +1813,63 @@ body {
         <div class="ac-series">🍥 Naruto · Shippuden</div>
         <div class="ac-name">Naruto City, Tokushima</div>
         <div class="ac-loc">📍 Naruto, Tokushima, Shikoku</div>
-        <div class="ac-desc">The city that gave the anime its name — and the tidal <strong>Naruto Whirlpools</strong> that inspired Naruto Uzumaki's spiral seal and surname. The word "naruto" literally means whirlpool. Boat tour under Ōnaruto Bridge. Walk the glass-floored bridge walkway above the maelstrom. Official Naruto merch shops in the city. One of the most satisfying anime pilgrimages in all of Japan.</div>
+        <div class="ac-desc">Naruto City, the whirlpools, the boat tour under Ōnaruto Bridge, and the glass-floored bridge walkway. Check tide timing before committing to the day.</div>
       </div>
 
       <div class="anime-card naruto">
         <div class="ac-series">🍥 Naruto — Forest Training Arcs</div>
         <div class="ac-name">Arashiyama Bamboo Grove</div>
         <div class="ac-loc">📍 Arashiyama, Kyoto</div>
-        <div class="ac-desc">The towering, claustrophobic bamboo path that Naruto and his team run through in countless training and mission arcs has a clear visual ancestor here. The density, height and light feel from the Arashiyama bamboo grove is unmistakable. Visit before 6am for zero tourists, incredible light shafts, and total forest immersion.</div>
+        <div class="ac-desc">A Kyoto stop that matches the forest-training look. Visit early if you want it quieter.</div>
       </div>
 
       <div class="anime-card naruto">
         <div class="ac-series">🍥 Naruto — Hidden Leaf Village</div>
         <div class="ac-name">Nikkō Shrine Complex</div>
         <div class="ac-loc">📍 Nikkō, Tochigi</div>
-        <div class="ac-desc">The ornate wooden architecture, massive cedar forests, and winding stone stairways of Nikkō's Tōshō-gū complex are central aesthetic references for the Hidden Leaf Village (Konohagakure). The carved gates, forest atmosphere, and the sense of a hidden settlement protected by ancient trees are all here in full effect.</div>
+        <div class="ac-desc">Tōshō-gū, cedar forest, carved gates and stone stairways. Works as a general Naruto-style shrine/forest reference stop.</div>
       </div>
 
       <div class="anime-card jjk">
         <div class="ac-series">💜 Jujutsu Kaisen</div>
         <div class="ac-name">Fushimi Inari Taisha</div>
         <div class="ac-loc">📍 Fushimi Ward, Kyoto</div>
-        <div class="ac-desc">The 10,000 torii gates of Fushimi Inari are the single most JJK-adjacent location in Japan. The visual language of JJK — compressed red gates, winding dark paths, fox spirits (kitsune are cursed-spirit adjacent) — is drawn directly from Inari worship sites. The upper mountain at night, lit by stone lanterns, feels like entering a Domain Expansion.</div>
+        <div class="ac-desc">Torii gates, mountain paths and Inari shrine imagery. Best early morning if you want fewer people.</div>
       </div>
 
       <div class="anime-card jjk">
         <div class="ac-series">💜 Jujutsu Kaisen — Kyoto Arc</div>
         <div class="ac-name">Yasaka Shrine, Gion</div>
         <div class="ac-loc">📍 Gion, Kyoto</div>
-        <div class="ac-desc">The Kyoto Jujutsu Tech school storyline is visually and spiritually rooted in Gion's ancient shrine district. Yasaka Shrine's stone lanterns, enormous torii, and cryptomeria forest exactly match the backgrounds in the Kyoto Goodwill Event arc. Walk Hanamikōji at dusk and the feeling of cursed spirits in old Kyoto is remarkably convincing.</div>
+        <div class="ac-desc">Yasaka Shrine, Gion, Hanamikōji and surrounding Kyoto streets. Easy to combine with the Osaka transfer day.</div>
       </div>
 
       <div class="anime-card jjk">
         <div class="ac-series">💜 Jujutsu Kaisen</div>
         <div class="ac-name">Tōkyō — Shibuya Incident Arc</div>
         <div class="ac-loc">📍 Shibuya, Tokyo</div>
-        <div class="ac-desc">The <strong>Shibuya Incident Arc</strong> is set entirely in Shibuya's real geography. Stand at <strong>Shibuya Crossing</strong> and visualize the barrier dome. The Underground Concourse, Scramble Square, and the Mark City overpass are all explicitly depicted in the manga/anime. The Metro Ticket Gate where Geto seals the non-sorcerers is based on the real Shibuya Station underground layout.</div>
+        <div class="ac-desc">Shibuya Crossing, Scramble Square, Mark City and the station underground areas used as references in the Shibuya Incident arc.</div>
       </div>
 
       <div class="anime-card jjk">
         <div class="ac-series">💜 Jujutsu Kaisen — Opening Scene</div>
         <div class="ac-name">Waseda University Area</div>
         <div class="ac-loc">📍 Shinjuku, Tokyo</div>
-        <div class="ac-desc">The Tokyo Jujutsu High School is visually based on buildings near Waseda University's Waseda campus. The stone walls, campus paths, and old academic architecture in the Takadanobaba / Waseda area match exactly. Walk the campus and the surrounding traditional student neighbourhood for that JJK school-arc atmosphere.</div>
+        <div class="ac-desc">Waseda/Takadanobaba area for campus-style JJK reference points and a normal Tokyo neighbourhood walk.</div>
       </div>
 
       <div class="anime-card general">
         <div class="ac-series">🎌 Anime General — Spirited Away</div>
         <div class="ac-name">Ginzan Onsen + Dōgo Onsen</div>
         <div class="ac-loc">📍 Yamagata / Matsuyama</div>
-        <div class="ac-desc">Two confirmed visual inspirations for the Spirited Away bathhouse: <strong>Ginzan Onsen</strong> (Taishō-era wooden ryokan on a river, lantern-lit at night — the most direct design reference) and <strong>Dōgo Onsen Honkan</strong> in Matsuyama (3,000-year-old bathhouse that Miyazaki directly cited). Staying the night at Ginzan especially feels like stepping inside the film.</div>
+        <div class="ac-desc">Ginzan Onsen and Dōgo Onsen Honkan are the two Spirited Away-related bathhouse stops in the route.</div>
       </div>
 
       <div class="anime-card general">
         <div class="ac-series">🎌 Merch · Shopping</div>
         <div class="ac-name">Akihabara + Animate Flagship</div>
         <div class="ac-loc">📍 Akihabara, Tokyo</div>
-        <div class="ac-desc">The world's most comprehensive anime merchandise. <strong>Animate Akihabara</strong> (8 floors) carries the largest JJK and Naruto figurine, manga, and goods selection anywhere. <strong>Mandarake Complex</strong> for vintage Naruto manga. <strong>Kotobukiya</strong> for premium figures. <strong>Surugaya</strong> for secondhand finds. Check Jump Shop in Shibuya and Tokyo Tower for exclusive Jump collab merchandise.</div>
+        <div class="ac-desc">Main merch stops: Animate, Mandarake, Kotobukiya, Surugaya and Jump Shop. Keep this flexible and buy only what is worth carrying.</div>
       </div>
 
     </div>
@@ -1740,7 +1885,7 @@ body {
       <div class="sec-titles">
         <span class="sec-label">Autumn · Forests · Mountains · Coasts</span>
         <h2>Nature &amp; Scenic<br>Highlights</h2>
-        <p class="sec-sub">Sep–Oct is Japan's best season for nature. Autumn begins in Hokkaido in mid-September and sweeps south reaching Kyoto/Tokyo by late October. These are the crown jewels.</p>
+        <p class="sec-sub">Nature stops on the route, with rough autumn timing.</p>
       </div>
     </div>
 
@@ -1750,7 +1895,7 @@ body {
         <div class="nc-season">🍁 Peak: Mid–Late October</div>
         <div class="nc-name">Daisetsuzan National Park</div>
         <div class="nc-loc">📍 Hokkaido</div>
-        <div class="nc-desc">Japan's largest national park and wildest wilderness. Volcanic peaks over 2,000m, alpine tundra, Japan's earliest and most dramatic autumn colour. Bear, deer, fox. Asahidake Ropeway into the volcanic plateau. Completely uncrowded by international standards.</div>
+        <div class="nc-desc">Large Hokkaido national park with volcanic peaks, alpine terrain, early autumn colour and the Asahidake Ropeway.</div>
         <div class="nc-timing">⏱ 2 full days minimum. Stay at Asahidake Onsen.</div>
       </div>
 
@@ -1758,7 +1903,7 @@ body {
         <div class="nc-season">🌊 September Oyster Peak</div>
         <div class="nc-name">Matsushima Bay Islands</div>
         <div class="nc-loc">📍 Miyagi, Tohoku</div>
-        <div class="nc-desc">260 pine-covered islands in a tranquil bay — one of Japan's three officially great views. Boat tour through the islands at sunrise. Fresh September oysters on the pier. The most serene bayscapes in Honshu.</div>
+        <div class="nc-desc">Boat tour through the bay's pine-covered islands, plus oysters on the pier if timing works.</div>
         <div class="nc-timing">⏱ Half-day or overnight from Sendai.</div>
       </div>
 
@@ -1766,7 +1911,7 @@ body {
         <div class="nc-season">🍁 Peak: Early October</div>
         <div class="nc-name">Naruko Onsen Gorge</div>
         <div class="nc-loc">📍 Osaki, Miyagi</div>
-        <div class="nc-desc">A 100m-deep canyon with sheer walls turning fiery crimson in early October. Almost no international tourists. Traditional kokeshi doll craftsmen. Small steaming onsen town at the rim of the gorge. Japan's best-kept autumn secret.</div>
+        <div class="nc-desc">Gorge walk, kokeshi workshops and an onsen town stop. Best timing is early October.</div>
         <div class="nc-timing">⏱ Full day. Combine with Sendai.</div>
       </div>
 
@@ -1782,8 +1927,8 @@ body {
         <div class="nc-season">🍁 Late October</div>
         <div class="nc-name">Kōya-san Ancient Cedar Forest</div>
         <div class="nc-loc">📍 Wakayama</div>
-        <div class="nc-desc">The Ōkunoin approach — 2km of enormous cedar trees, mossy stone lanterns and samurai tombs. In late October the high-altitude forest turns gold and the stone lanterns create a tunnel of amber light. Stay overnight in a temple for the absolute full atmosphere.</div>
-        <div class="nc-timing">⏱ Overnight stay essential.</div>
+        <div class="nc-desc">Ōkunoin approach, cedar trees, stone lanterns and temple lodging if the schedule allows.</div>
+        <div class="nc-timing">⏱ Overnight preferred.</div>
       </div>
 
       <div class="nature-card">
@@ -1798,7 +1943,7 @@ body {
         <div class="nc-season">🌋 Year-round</div>
         <div class="nc-name">Lake Tōya Volcanic Caldera</div>
         <div class="nc-loc">📍 Hokkaido</div>
-        <div class="nc-desc">A perfectly circular lake formed in a volcanic crater 110,000 years ago, 180m deep, with an island rising from the centre. Mt. Yōtei (Hokkaido's cone-shaped Fuji) visible across the lake. Late October: shore trees are full gold and red. Exceptionally clear water — you can see the lake floor in the shallows.</div>
+        <div class="nc-desc">Volcanic caldera lake with Mt. Yōtei views. Combine with Noboribetsu on the same day if driving.</div>
         <div class="nc-timing">⏱ Half day. Combine with Noboribetsu.</div>
       </div>
 
@@ -1830,8 +1975,8 @@ body {
       <div class="sec-num">05</div>
       <div class="sec-titles">
         <span class="sec-label">Street Food · Fine Dining · Regional Classics</span>
-        <h2>What to Eat —<br>All of It</h2>
-        <p class="sec-sub">Japan has more Michelin stars than France. It also has ¥600 bowls that change your life. Both are essential. This is the full spectrum.</p>
+        <h2>Food Plan</h2>
+        <p class="sec-sub">Food targets by city, from quick meals to book-ahead dinners.</p>
       </div>
     </div>
 
@@ -1841,7 +1986,7 @@ body {
         <div class="fc-cat">🎵 Pilgrimage · Shibuya · Day 10</div>
         <div class="fc-name">Usagi Ramen</div>
         <div class="fc-jp">うさぎ · Nujabes' Brother's Restaurant</div>
-        <div class="fc-desc">Run by the younger brother of Nujabes — his music plays all day, every day. Light shoyu broth, zero artificial flavours, extraordinary truffle ramen. 12-seat counter. One of the most quietly moving dining experiences in Tokyo for any Nujabes fan. The chashu is considered among the best in the city.</div>
+        <div class="fc-desc">Small Shibuya ramen counter run by Nujabes' younger brother. Go for shoyu or truffle ramen if it fits the route.</div>
         <div class="fc-where">📍 8-13 Shinsencho, Shibuya (near Shinsen Station)</div>
         <div class="fc-reco">¥1,200–1,800 pp · Small queue likely</div>
       </div>
@@ -1850,7 +1995,7 @@ body {
         <div class="fc-cat">Fine Dining · Tokyo</div>
         <div class="fc-name">Omakase Sushi</div>
         <div class="fc-jp">おまかせ寿司</div>
-        <div class="fc-desc">15–20 courses at a 7-seat counter. Chef determines everything. Each piece hand-formed, aged, seasoned on the plate. Yoshitake, Harutaka, Saito — Tokyo's Michelin 3-star sushi is the pinnacle of Japanese cuisine. Book 2–3 months ahead via Tableall.</div>
+        <div class="fc-desc">15–20 course sushi counter dinner. Targets include Yoshitake, Harutaka and Sushi Sho. Book 2–3 months ahead via Tableall/Omakase.</div>
         <div class="fc-where">📍 Ginza / Akasaka</div>
         <div class="fc-reco">¥40,000–70,000 pp · Book months ahead</div>
       </div>
@@ -1859,7 +2004,7 @@ body {
         <div class="fc-cat">Fine Dining · Kyoto</div>
         <div class="fc-name">Kaiseki Ryōri</div>
         <div class="fc-jp">懐石料理</div>
-        <div class="fc-desc">12–15 course seasonal tasting menu. Each dish is an artwork timed to the specific month. In October: matsutake mushroom, persimmon, autumn fish. Best in Kyoto's Gion ryōtei restaurants — Kikunoi, Nakamura, or Hyōtei (3-star, 200 years old). The most elegant meal in Japan.</div>
+        <div class="fc-desc">Seasonal Kyoto tasting menu. Targets: Kikunoi, Nakamura or Hyōtei. Book ahead if this stays in the budget.</div>
         <div class="fc-where">📍 Gion, Kyoto</div>
         <div class="fc-reco">¥25,000–50,000 pp</div>
       </div>
@@ -1868,7 +2013,7 @@ body {
         <div class="fc-cat">Street Food · Tokyo</div>
         <div class="fc-name">Tsukiji Outer Market Breakfast</div>
         <div class="fc-jp">築地場外市場</div>
-        <div class="fc-desc">6am: fresh uni on rice, tuna sashimi, thick tamagoyaki. The best breakfast in Japan. Chefs from restaurant kitchens shop here — the quality is extraordinary. Walk with a cup of dashi broth and eat standing at stalls. Don't miss the grilled scallops and wagyu skewers.</div>
+        <div class="fc-desc">Early market breakfast: uni rice, tuna, tamagoyaki, grilled scallops or skewers. Keep it casual and go before the crowds.</div>
         <div class="fc-where">📍 Tsukiji, Tokyo</div>
         <div class="fc-reco">¥1,500–3,000 pp</div>
       </div>
@@ -1877,7 +2022,7 @@ body {
         <div class="fc-cat">Regional Classic · Hokkaido</div>
         <div class="fc-name">Sapporo Miso Ramen</div>
         <div class="fc-jp">味噌ラーメン</div>
-        <div class="fc-desc">The definitive bowl — thick miso broth, corn, butter, spring onion, chashu. Born in Hokkaido's cold winters. Best at Susukino Ramen Alley (Rāmen Yokochō) — 17 tiny stalls in a narrow lane, all with their specific version. The butter melts into the hot miso and the flavour is incomparable.</div>
+        <div class="fc-desc">Miso ramen with corn, butter, spring onion and chashu. Susukino Ramen Alley is the convenient target.</div>
         <div class="fc-where">📍 Rāmen Yokochō, Sapporo</div>
         <div class="fc-reco">¥900–1,400 pp</div>
       </div>
@@ -1886,7 +2031,7 @@ body {
         <div class="fc-cat">Street Food · Osaka</div>
         <div class="fc-name">Takoyaki + Okonomiyaki</div>
         <div class="fc-jp">たこ焼き・お好み焼き</div>
-        <div class="fc-desc">Osaka's identity. Takoyaki: charred octopus dumplings with bonito flakes dancing from the heat. Best at Dotonbori's Kukuru. Okonomiyaki: the Osaka version is layered (not mixed) — best at Mizuno since 1945. Eat standing in narrow alleys off Dotonbori at 10pm.</div>
+        <div class="fc-desc">Takoyaki around Dotonbori and okonomiyaki at Mizuno if the queue is reasonable.</div>
         <div class="fc-where">📍 Dotonbori, Osaka</div>
         <div class="fc-reco">¥500–1,200 pp</div>
       </div>
@@ -1895,7 +2040,7 @@ body {
         <div class="fc-cat">Regional Classic · Sendai</div>
         <div class="fc-name">Gyūtan (Grilled Beef Tongue)</div>
         <div class="fc-jp">牛たん</div>
-        <div class="fc-desc">Sendai's signature dish. Thick-cut tongue, charcoal-grilled, served with barley rice and oxtail soup. The outside char, the pink interior, the depth of flavour — it's extraordinary. Best at Rikyu or Tsuraya, both near Sendai Station. An unlikely dish that became one of Japan's great regional classics.</div>
+        <div class="fc-desc">Sendai's signature grilled beef tongue, usually served with barley rice and soup. Try Rikyu or Tsuraya near Sendai Station.</div>
         <div class="fc-where">📍 Sendai, Miyagi</div>
         <div class="fc-reco">¥2,000–3,500 pp</div>
       </div>
@@ -1904,7 +2049,7 @@ body {
         <div class="fc-cat">Fine Dining · Hokkaido</div>
         <div class="fc-name">Live King Crab &amp; Uni Don</div>
         <div class="fc-jp">毛蟹・ウニ丼</div>
-        <div class="fc-desc">In October, Hokkaido's king crab season peaks. Choose live from the tank, watch it cooked. A full crab costs ¥5,000–15,000 and is a full meal. Sea urchin (uni) from Hokkaido is Japan's sweetest — on warm rice, with a drizzle of soy, it requires nothing else. Best at Sapporo's Nijo Market counters.</div>
+        <div class="fc-desc">Crab, scallops or uni at Nijo Market. Choose based on price on the day; it can get expensive quickly.</div>
         <div class="fc-where">📍 Nijo Market, Sapporo</div>
         <div class="fc-reco">¥4,000–15,000 pp</div>
       </div>
@@ -1913,7 +2058,7 @@ body {
         <div class="fc-cat">Street Food · Kyoto</div>
         <div class="fc-name">Nishiki Market Walk</div>
         <div class="fc-jp">錦市場</div>
-        <div class="fc-desc">"Kyoto's Kitchen" — a 400-year-old covered arcade of 130 stalls. Octopus skewers on bamboo, yuzu miso pickles, dashimaki tamago rolls, matcha mochi, tofu doughnuts, grilled skewers. Eat as you walk for 400m. Most stalls are family-run for generations. Best mid-morning before lunch crowd.</div>
+        <div class="fc-desc">Covered market for octopus skewers, pickles, tamago, matcha sweets, tofu doughnuts and grilled snacks. Best mid-morning.</div>
         <div class="fc-where">📍 Nakagyo Ward, Kyoto</div>
         <div class="fc-reco">¥1,500–3,000 total</div>
       </div>
@@ -1922,7 +2067,7 @@ body {
         <div class="fc-cat">Regional Classic · Tokyo</div>
         <div class="fc-name">Monjayaki</div>
         <div class="fc-jp">もんじゃ焼き</div>
-        <div class="fc-desc">Tokyo's answer to okonomiyaki — a runnier batter that you scrape and cook on the teppan yourself, then eat from the hot iron with a tiny spatula. Quirky, interactive, deeply Tokyo. Best in Tsukishima's "Monja Street" — 50+ specialty restaurants on one street. Order with mentaiko (cod roe) and cheese.</div>
+        <div class="fc-desc">Tsukishima's Monja Street is the target. Order mentaiko and cheese if you want the standard first-timer option.</div>
         <div class="fc-where">📍 Tsukishima, Tokyo</div>
         <div class="fc-reco">¥1,500–2,500 pp</div>
       </div>
@@ -1931,7 +2076,7 @@ body {
         <div class="fc-cat">Regional Classic · Hiroshima</div>
         <div class="fc-name">Hiroshima Okonomiyaki</div>
         <div class="fc-jp">広島風お好み焼き</div>
-        <div class="fc-desc">Fundamentally different from Osaka: the batter layers are separated, with yakisoba noodles baked inside. It's a more substantial, more complex dish. Best at <strong>Micchan</strong> (the original inventor's family restaurant) or Hasshō in the Okonomimura building — 25 restaurants on 3 floors, all okonomiyaki, all Hiroshima style.</div>
+        <div class="fc-desc">Hiroshima-style okonomiyaki with noodles. Targets: Micchan, Hasshō or Okonomimura.</div>
         <div class="fc-where">📍 Okonomimura, Hiroshima</div>
         <div class="fc-reco">¥1,200–1,800 pp</div>
       </div>
@@ -1940,7 +2085,7 @@ body {
         <div class="fc-cat">Local Gem · Otaru</div>
         <div class="fc-name">Otaru Sushi</div>
         <div class="fc-jp">小樽寿司</div>
-        <div class="fc-desc">Otaru's fish comes directly from Hokkaido waters at their freshest. The sushi here is as good as Tokyo's best, at half the price. <strong>Masazushi</strong> (since 1938) or Kaiyo — counter seats, no menu, trust the chef. In October the tuna, salmon, and sea urchin are all at peak season.</div>
+        <div class="fc-desc">Otaru sushi counter lunch or dinner. Targets: Masazushi or Kaiyo, depending on availability and budget.</div>
         <div class="fc-where">📍 Otaru, Hokkaido</div>
         <div class="fc-reco">¥5,000–12,000 pp</div>
       </div>
@@ -1949,7 +2094,7 @@ body {
         <div class="fc-cat">Street Food · Asakusa</div>
         <div class="fc-name">Ningyo-yaki &amp; Yanaka Ginza</div>
         <div class="fc-jp">人形焼・谷中銀座</div>
-        <div class="fc-desc">Asakusa's temple street snacks: ningyo-yaki (small figure-shaped castella cakes filled with red bean, eaten hot). Then Yanaka Ginza shopping street — a 1950s-style covered arcade with old ladies selling: menchi-katsu (fried minced beef), fresh yakitori, taiyaki fish cakes. Tokyo's most charming street food strip.</div>
+        <div class="fc-desc">Asakusa snacks, then Yanaka Ginza for menchi-katsu, yakitori and taiyaki.</div>
         <div class="fc-where">📍 Asakusa / Yanaka, Tokyo</div>
         <div class="fc-reco">¥500–2,000 total</div>
       </div>
@@ -1975,9 +2120,9 @@ body {
 
       <div class="big-card gold">
         <span class="bc-icon">🍜</span>
-        <div class="bc-when">Day 10 · Must Visit · Shibuya</div>
+        <div class="bc-when">Day 10 · Shibuya</div>
         <div class="bc-title">Usagi Ramen — Nujabes' Brother's Counter</div>
-        <div class="bc-desc">The single most important Nujabes stop in Tokyo. The owner is Nujabes' younger brother — Nujabes music plays continuously, all day every day. 12-seat counter, light shoyu broth made without artificial flavours, legendary truffle ramen. The chashu is considered among the best in Tokyo. It's a ramen shop and a quiet memorial at the same time. A deeply moving stop for any fan. Small queue expected — worth every minute of it.</div>
+        <div class="bc-desc">Small Shibuya ramen counter run by Nujabes' younger brother. Order shoyu or truffle ramen. Expect a small queue.</div>
         <div class="bc-where">📍 8-13 Shinsencho, Shibuya-ku · Near Shinsen Station · ¥1,200–1,800</div>
       </div>
 
@@ -1993,7 +2138,7 @@ body {
         <span class="bc-icon">💿</span>
         <div class="bc-when">Day 10 · Afternoon · Shibuya</div>
         <div class="bc-title">Face Records — Recommended by Nujabes' Brother</div>
-        <div class="bc-desc">Nujabes owned two Shibuya record shops — Tribe and Guinness Records — both closed after his death in 2010. The closest living equivalent: <strong>Face Records Shibuya</strong>, personally recommended by Nujabes' brother as the best place to dig for vinyl in his style. Deep underground hip-hop, jazz, soul, lo-fi. Combine with the record shop crawl through Shimokitazawa for a full day of digging.</div>
+        <div class="bc-desc">Shibuya record stop for hip-hop, jazz, soul and lo-fi. Combine with Shimokitazawa record shops if this becomes a full music day.</div>
         <div class="bc-where">📍 Face Records, Udagawacho, Shibuya-ku</div>
       </div>
 
@@ -2031,7 +2176,7 @@ body {
         <div class="photo-num">01</div>
         <div class="photo-name">Fushimi Inari at Dawn</div>
         <div class="photo-loc">📍 Kyoto</div>
-        <div class="photo-desc">5am. Tunnels of vermilion torii gates winding up a forest mountain. Zero tourists. Stone lanterns still lit. Foxes occasionally visible on the mountain path. The most recognizable image in Japan — best experienced at the hour when it's completely yours.</div>
+        <div class="photo-desc">Early morning torii gates and mountain path. Go before the daytime crowds if this is a priority shot.</div>
         <div class="photo-tip">💡 Bring a wide-angle lens. Best light: 5:30–7am.</div>
       </div>
 
@@ -2039,7 +2184,7 @@ body {
         <div class="photo-num">02</div>
         <div class="photo-name">Miyajima Torii at Sunrise</div>
         <div class="photo-loc">📍 Hiroshima Bay</div>
-        <div class="photo-desc">Stay overnight on the island. At low tide walk across the mudflat to the O-torii gate as the first light turns it deep vermilion. The gate reflected in tide pools, Mt. Misen behind, zero crowds. One of Japan's three great iconic images.</div>
+        <div class="photo-desc">Stay overnight if possible, then shoot the O-torii around low tide or sunrise.</div>
         <div class="photo-tip">💡 Check tide tables. Low tide 6–7am is ideal.</div>
       </div>
 
@@ -2055,7 +2200,7 @@ body {
         <div class="photo-num">04</div>
         <div class="photo-name">Arashiyama Bamboo Grove</div>
         <div class="photo-loc">📍 Kyoto</div>
-        <div class="photo-desc">30-metre bamboo walls forming a green cathedral over a narrow path. The light filtering through at 6am, the clicking of bamboo in the wind, and the complete absence of people make this one of Japan's most extraordinary sensory experiences.</div>
+        <div class="photo-desc">Bamboo path in early morning light. Arrive early if you want cleaner photos.</div>
         <div class="photo-tip">💡 5:45am arrival. Bring a tripod for the diffused tunnel shot.</div>
       </div>
 
@@ -2079,23 +2224,23 @@ body {
         <div class="photo-num">07</div>
         <div class="photo-name">Daisetsuzan Asahidake Peak</div>
         <div class="photo-loc">📍 Hokkaido</div>
-        <div class="photo-desc">At 1,600m+ in mid-October: volcanic steam vents, alpine tundra in full crimson/gold/orange, distant volcanic summits. The widest and most dramatic autumn colour panorama in Japan. Absolutely no crowds beyond the ropeway top station.</div>
-        <div class="photo-tip">💡 7am ropeway. Bring a 24–70mm. The volcanic steam adds dramatic atmosphere.</div>
+        <div class="photo-desc">Volcanic plateau, steam vents and autumn colour around the Asahidake Ropeway area.</div>
+        <div class="photo-tip">💡 7am ropeway. Bring a 24–70mm.</div>
       </div>
 
       <div class="photo-card">
         <div class="photo-num">08</div>
         <div class="photo-name">Ōkunoin Cemetery at Dusk</div>
         <div class="photo-loc">📍 Kōya-san</div>
-        <div class="photo-desc">Two kilometres of 200,000 stone lanterns and ancient moss-covered tombs under enormous cedar trees. As dusk falls and lanterns begin to glow through the forest, the atmosphere is unlike anything else in Japan. Silent, sacred, spectacular.</div>
-        <div class="photo-tip">💡 Start the path at 5pm — arrive at lantern glow time. Tripod essential.</div>
+        <div class="photo-desc">Stone lanterns, cedar trees and the Ōkunoin approach at dusk.</div>
+        <div class="photo-tip">💡 Start the path at 5pm. Tripod recommended.</div>
       </div>
 
       <div class="photo-card">
         <div class="photo-num">09</div>
         <div class="photo-name">Lake Ashi Fuji Reflection</div>
         <div class="photo-loc">📍 Hakone</div>
-        <div class="photo-desc">On windless clear September mornings, Mt. Fuji reflects perfectly in Lake Ashi. The classic spot is on the northwest shore near Moto-Hakone. 6am from the lakeside path. The reflection sometimes appears before Fuji is fully visible through morning mist.</div>
+        <div class="photo-desc">Lake Ashi Fuji reflection if the weather is clear and calm. Try the lakeside path near Moto-Hakone.</div>
         <div class="photo-tip">💡 Windless mornings only. Check weather 2 days ahead.</div>
       </div>
 
@@ -2152,7 +2297,7 @@ body {
       <div class="work-card">
         <div class="wc-week">Week 3 · Day 23</div>
         <div class="wc-city">Kyoto — Café District</div>
-        <div class="wc-desc">Kyoto has an incredible independent café culture — machiya townhouse cafés with excellent espresso, fast wifi, and calm atmosphere. Perfect for deep work.</div>
+        <div class="wc-desc">Kyoto has solid independent cafés, including machiya townhouse options with wifi and quieter seating.</div>
         <div class="wc-spots"><strong>Top spots:</strong> Wife &amp; Husband (Kuramaguchi), Omotesando Koffee, Weekenders Coffee</div>
       </div>
       <div class="work-card">
@@ -2170,7 +2315,7 @@ body {
       <div class="work-card">
         <div class="wc-week">Week 6 · Day 44</div>
         <div class="wc-city">Otaru, Hokkaido</div>
-        <div class="wc-desc">The canal-side stone warehouse cafés offer excellent atmosphere for final wrap-up work. Slow-paced, beautiful setting. Very few tourists in late October.</div>
+        <div class="wc-desc">Canal-side cafés for a slower final work block before returning to Sapporo.</div>
         <div class="wc-spots"><strong>Top spots:</strong> Canal-side warehouse cafés, LeTAO café, Starbucks (Heritage building conversion)</div>
       </div>
     </div>
@@ -2195,10 +2340,10 @@ body {
       <h3>🚅 Transport</h3>
       <div class="tips-cols">
         <div class="tip-item">Do a <strong>JR Pass vs individual tickets check</strong> once the route is final. The current budget assumes either a 21/14-day pass mix or individual Shinkansen tickets depending on final routing.</div>
-        <div class="tip-item"><strong>IC Card (Suica or Pasmo)</strong> is essential — load ¥5,000–10,000 and tap on/off every metro, bus, and convenience store in Japan.</div>
+        <div class="tip-item"><strong>IC Card (Suica or Pasmo):</strong> load ¥5,000–10,000 and use it for metro, buses and convenience stores.</div>
         <div class="tip-item">Shinkansen is the default for anything over 90 minutes. Overnight buses are cheap alternatives (¥3,000–6,000) for Osaka-Tokyo if you want to save a hotel night.</div>
         <div class="tip-item">Taxis are expensive (~¥700 flag-fall). Use for short late-night journeys only. Uber works in major cities; Go app works everywhere.</div>
-        <div class="tip-item">For Hokkaido, rent a car in Sapporo for the Daisetsuzan + Lake Tōya + Noboribetsu loop — public transport to these is poor and a car takes you to the best spots.</div>
+        <div class="tip-item">For Hokkaido, rent a car in Sapporo for the Daisetsuzan + Lake Tōya + Noboribetsu loop.</div>
         <div class="tip-item">Domestic flights: Tokyo–Sapporo is 1.5 hours by ANA/JAL. Book 2–3 months ahead for ¥6,000–12,000. Better than the 10h Shinkansen for Hokkaido.</div>
       </div>
     </div>
@@ -2209,9 +2354,9 @@ body {
         <div class="tip-item">Japan is still largely cash-heavy, especially in rural areas, temples and small restaurants. Always carry ¥10,000–20,000 in cash.</div>
         <div class="tip-item">7-Eleven ATMs accept all international cards and dispense cash 24/7. This is your most reliable ATM source across all 45 days.</div>
         <div class="tip-item">Mid-range daily budget (excluding big experiences and fine dining): ¥15,000–25,000/day covers food, transport, entry fees and accommodation.</div>
-        <div class="tip-item">Tipping is not just unnecessary — it can cause offense. Never tip anyone anywhere. The service is world-class and the pride in service is cultural.</div>
-        <div class="tip-item">The <strong>Ichiran ramen</strong> model (solo booth dining) is perfect if you're eating alone — order on a form, no interaction needed, ¥1,000 including extras.</div>
-        <div class="tip-item">100-yen shops (Daiso, Seria) are extraordinary — buy chopsticks, small containers, phone accessories, umbrellas. Don't underestimate them.</div>
+        <div class="tip-item">No tipping in Japan. Pay the listed price and leave it there.</div>
+        <div class="tip-item"><strong>Ichiran ramen:</strong> easy solo meal, form ordering, around ¥1,000 plus extras.</div>
+        <div class="tip-item">100-yen shops (Daiso, Seria): useful for chopsticks, small containers, phone accessories and umbrellas.</div>
       </div>
     </div>
 
@@ -2251,7 +2396,7 @@ body {
           <thead>
             <tr>
               <th>Category</th>
-              <th>Estimate (45 days)</th>
+              <th>Estimate</th>
               <th>USD</th>
               <th>Notes</th>
             </tr>
@@ -2299,17 +2444,23 @@ body {
               <td>$255–$382</td>
               <td>SIM/pocket wifi, laundry, lockers, umbrellas, convenience store essentials, small taxis, pharmacy and buffer.</td>
             </tr>
+            <tr>
+              <td class="cat">15 Blank-Day Buffer</td>
+              <td class="amt">¥240,000–450,000</td>
+              <td>$1,529–$2,866</td>
+              <td>Rough placeholder for 15 unplanned days: lodging, food, local transit and light activities. Replace once those days have real plans.</td>
+            </tr>
             <tr class="total">
-              <td class="cat"><strong>Total Estimate</strong></td>
-              <td class="amt">¥1,130,000–1,610,000</td>
-              <td><strong>$7,197–$10,254</strong></td>
-              <td>Excludes international flights. Biggest variables: luxury hotel nights and the GT-R/RX-7 rental length/model.</td>
+              <td class="cat"><strong>Total Estimate with Blank Days</strong></td>
+              <td class="amt">¥1,370,000–2,060,000</td>
+              <td><strong>$8,726–$13,121</strong></td>
+              <td>Excludes international flights. Biggest variables: luxury hotel nights, the GT-R/RX-7 rental length/model, and what fills Days 46–60.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="budget-subtle">Planning note: choosing mid-range hotels instead of Aman Kyoto / Park Hyatt style stays can drop accommodation by roughly ¥300,000 (~$1,900). The car day is another major swing: a simpler half-day rental can be ¥80,000, while a top-model/full-day option can reach ¥200,000.</p>
+      <p class="budget-subtle">Planning note: the original 45 planned days were estimated at ¥1,130,000–1,610,000. The 15 blank days add a temporary ¥240,000–450,000 placeholder until those days have real activities. Choosing mid-range hotels instead of Aman Kyoto / Park Hyatt style stays can still drop accommodation by roughly ¥300,000 (~$1,900).</p>
 
       <h3 class="budget-section-title">Big Experiences &amp; Tickets</h3>
       <div class="budget-scroll">
@@ -2357,7 +2508,7 @@ body {
             <tr><td class="cat">Otaru sushi counter</td><td class="amt">¥5,000–12,000</td><td>$32–$76</td><td>Masazushi / Kaiyo style counter.</td></tr>
             <tr><td class="cat">Live king crab, Sapporo Nijo</td><td class="amt">¥5,000–15,000</td><td>$32–$96</td><td>Peak Hokkaido seafood splurge.</td></tr>
             <tr><td class="cat">Uni donburi, Otaru</td><td class="amt">¥2,000–4,000</td><td>$13–$25</td><td>Best while in Hokkaido.</td></tr>
-            <tr><td class="cat">Usagi Ramen</td><td class="amt">¥1,200–1,800</td><td>$8–$11</td><td>Nujabes pilgrimage stop.</td></tr>
+            <tr><td class="cat">Usagi Ramen</td><td class="amt">¥1,200–1,800</td><td>$8–$11</td><td>Shibuya ramen stop.</td></tr>
             <tr><td class="cat">Mochi Mochi, Higashiyama Kyoto</td><td class="amt">¥1,000</td><td>$6</td><td>Small Kyoto sweets stop.</td></tr>
             <tr><td class="cat">Monjayaki, Tsukishima Tokyo</td><td class="amt">¥1,500–2,500</td><td>$10–$16</td><td>Tokyo local classic.</td></tr>
             <tr><td class="cat">Nishiki Market walk, Kyoto</td><td class="amt">¥1,500–3,000 total</td><td>$10–$19</td><td>Mid-morning grazing route.</td></tr>
@@ -2398,7 +2549,7 @@ body {
           <thead><tr><th>Type</th><th>JPY / Night</th><th>USD / Night</th><th>Trip Note</th></tr></thead>
           <tbody>
             <tr><td class="cat">Budget hotel / capsule</td><td class="amt">¥4,000–7,000</td><td>$25–$45</td><td>Good for solo city nights and cost control.</td></tr>
-            <tr><td class="cat">Mid-range business hotel</td><td class="amt">¥10,000–18,000</td><td>$64–$115</td><td>Main baseline for the 45-day trip.</td></tr>
+            <tr><td class="cat">Mid-range business hotel</td><td class="amt">¥10,000–18,000</td><td>$64–$115</td><td>Main baseline for the planned route.</td></tr>
             <tr><td class="cat">Machiya townhouse ryokan</td><td class="amt">¥20,000–35,000</td><td>$127–$223</td><td>Kyoto character stay.</td></tr>
             <tr><td class="cat">Numajiri Kogen Lodge / onsen ryokan</td><td class="amt">¥25,000–40,000</td><td>$159–$255</td><td>Onsen splurge benchmark.</td></tr>
             <tr><td class="cat">Ginzan Onsen ryokan</td><td class="amt">¥30,000–60,000</td><td>$191–$382</td><td>Photogenic Tohoku onsen town night.</td></tr>
@@ -2417,7 +2568,7 @@ body {
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer class="footer">
   <span class="footer-jp">良い旅を · よい旅を</span>
-  <p>Have a great journey · Sep 15–Oct 29, 2026 · 45 Days · Japan</p>
+  <p>Have a great journey · Sep 15–Nov 13, 2026 · 60 Days · Japan</p>
   <p style="margin-top: 8px; color: rgba(255,255,255,0.2);">Naruto × JJK × Nature × Food × JDM</p>
 </footer>
 
