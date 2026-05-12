@@ -800,6 +800,96 @@ body {
   background: rgba(0,0,0,0.24);
 }
 .map-note strong { color: var(--cream); }
+.atlas-grid {
+  stroke: rgba(232,224,212,0.055);
+  stroke-width: 1;
+}
+.atlas-title {
+  fill: rgba(232,224,212,0.92);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+}
+.atlas-subtitle {
+  fill: var(--muted);
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.island {
+  fill: rgba(232,224,212,0.075);
+  stroke: rgba(232,224,212,0.22);
+  stroke-width: 1.5;
+}
+.island-name {
+  fill: rgba(232,224,212,0.22);
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+.atlas-route-glow {
+  fill: none;
+  stroke: rgba(201,48,48,0.25);
+  stroke-width: 18;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.atlas-route {
+  fill: none;
+  stroke: url(#routeGradient);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.atlas-flight {
+  fill: none;
+  stroke: rgba(232,224,212,0.5);
+  stroke-width: 3;
+  stroke-dasharray: 8 10;
+  stroke-linecap: round;
+}
+.atlas-node circle {
+  stroke: #f8f1e6;
+  stroke-width: 3;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.7));
+}
+.atlas-node text {
+  fill: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+.atlas-label {
+  fill: var(--cream);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,0.86);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+.atlas-date {
+  fill: var(--muted);
+  font-family: 'Syne', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,0.86);
+  stroke-width: 4px;
+}
+.atlas-card {
+  fill: rgba(8,8,8,0.66);
+  stroke: rgba(232,224,212,0.14);
+  stroke-width: 1;
+}
 .route-side {
   border: 1px solid var(--border);
   background: var(--card);
@@ -975,7 +1065,7 @@ body {
     <div class="sec-header">
       <div class="sec-num">00</div>
       <div class="sec-titles">
-        <span class="sec-label">Interactive Route · OpenStreetMap · 3D-Styled Frame</span>
+        <span class="sec-label">Route Atlas · Static · High Contrast</span>
         <h2>How You Move<br>Across Japan</h2>
         <p class="sec-sub">A north-to-south-to-north arc for Sep 15–Oct 29, 2026: Tokyo immersion, mountain and onsen detours, Kyoto/Osaka culture, Hiroshima/Shikoku/Ise, then a final flight to Hokkaido for wild autumn landscapes.</p>
       </div>
@@ -984,7 +1074,7 @@ body {
     <div class="route-stage">
       <div class="map-shell" id="mapShell">
         <div class="route-map" aria-label="Japan trip route map">
-          <svg class="japan-route-svg" viewBox="0 0 860 620" role="img" aria-labelledby="routeMapTitle routeMapDesc">
+          <svg class="japan-route-svg" viewBox="0 0 960 640" role="img" aria-labelledby="routeMapTitle routeMapDesc">
             <title id="routeMapTitle">45-day Japan route map</title>
             <desc id="routeMapDesc">A visible static route map showing the trip from Tokyo to Tohoku, Kansai, Hiroshima, Shikoku, Ise, Tokyo and Hokkaido.</desc>
             <defs>
@@ -995,44 +1085,59 @@ body {
                 <stop offset="75%" stop-color="#2a8a7a"/>
                 <stop offset="100%" stop-color="#3a7a4a"/>
               </linearGradient>
+              <pattern id="atlasGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+                <path class="atlas-grid" d="M48 0H0V48"/>
+              </pattern>
             </defs>
 
-            <rect class="map-sea" x="0" y="0" width="860" height="620"/>
-            <path class="map-land-glow" d="M520 76 L548 94 L566 128 L552 164 L568 206 L556 250 L572 296 L552 334 L566 384 L548 428 L522 468 L486 504 L438 522 L392 514 L352 536 L310 526 L270 496 L236 456 L214 410 L194 362 L178 318 L162 272 L142 232 L118 198 L94 170 L72 140"/>
-            <path class="map-land" d="M510 68 C538 70 566 100 574 134 C582 168 560 186 572 218 C584 250 570 280 580 306 C592 340 568 360 570 392 C572 430 530 472 492 498 C454 524 420 520 392 536 C362 554 316 530 284 504 C250 476 228 430 208 386 C190 346 178 306 158 264 C140 226 112 194 84 170 C62 150 54 132 68 116 C90 92 124 110 150 136 C182 166 204 210 220 254 C240 304 246 352 272 398 C298 444 334 474 380 486 C428 498 470 478 502 440 C532 404 548 360 540 316 C532 270 520 238 528 198 C536 158 498 116 510 68 Z"/>
-            <path class="map-land" d="M606 84 C640 92 672 120 686 154 C700 190 682 226 652 244 C626 260 594 246 586 214 C578 184 594 152 588 124 C584 100 590 86 606 84 Z"/>
-            <path class="map-land" d="M470 548 C500 548 528 562 540 588 C510 606 470 606 434 590 C440 566 450 552 470 548 Z"/>
-            <path class="map-land" d="M200 474 C230 486 248 516 236 546 C202 544 174 522 164 494 C172 478 184 470 200 474 Z"/>
-            <path class="map-land" d="M138 410 C164 414 184 438 182 466 C150 470 120 452 106 424 C112 414 124 408 138 410 Z"/>
+            <rect class="map-sea" x="0" y="0" width="960" height="640"/>
+            <rect x="0" y="0" width="960" height="640" fill="url(#atlasGrid)"/>
+            <text class="atlas-title" x="54" y="72">Japan Route Atlas</text>
+            <text class="atlas-subtitle" x="58" y="102">Sep 15 - Oct 29, 2026 · Tokyo to Hokkaido via Kansai, Shikoku and Ise</text>
 
-            <path class="route-path-shadow" d="M550 332 L520 332 L484 298 L454 252 L468 204 L486 158 L520 116 L556 164 L486 298 L418 382 L352 392 L296 416 L244 456 L206 430 L270 382 L352 392 L430 444 L520 332"/>
-            <path class="route-path" d="M550 332 L520 332 L484 298 L454 252 L468 204 L486 158 L520 116 L556 164 L486 298 L418 382 L352 392 L296 416 L244 456 L206 430 L270 382 L352 392 L430 444 L520 332"/>
-            <path class="route-flight" d="M520 332 C612 282 646 196 620 108"/>
-            <path class="route-flight" d="M620 108 C650 180 612 270 520 332"/>
+            <path class="island" d="M652 74 C704 50 778 72 804 124 C830 176 804 226 746 238 C684 252 622 220 606 166 C592 120 614 88 652 74 Z"/>
+            <path class="island" d="M585 168 C642 200 686 256 674 320 C660 394 584 424 536 470 C490 514 444 556 374 552 C304 548 250 506 220 446 C190 386 204 324 254 288 C304 252 348 260 398 228 C450 194 514 128 585 168 Z"/>
+            <path class="island" d="M320 454 C358 448 398 466 414 500 C386 528 332 530 296 502 C292 478 302 462 320 454 Z"/>
+            <path class="island" d="M202 468 C244 478 270 516 258 558 C212 560 168 530 154 490 C166 472 184 464 202 468 Z"/>
+            <text class="island-name" x="682" y="154">HOKKAIDO</text>
+            <text class="island-name" x="430" y="372">HONSHU</text>
+            <text class="island-name" x="305" y="494">SHIKOKU</text>
+            <text class="island-name" x="166" y="535">KYUSHU</text>
 
-            <text class="map-label small" x="66" y="70">schematic route map</text>
-            <text class="map-label" x="574" y="352">Tokyo</text>
-            <text class="map-label" x="474" y="307">Hakone</text>
-            <text class="map-label" x="488" y="252">Nikko</text>
-            <text class="map-label" x="500" y="165">Tohoku</text>
-            <text class="map-label" x="628" y="112">Hokkaido</text>
-            <text class="map-label" x="382" y="374">Kyoto / Osaka</text>
-            <text class="map-label" x="262" y="408">Hiroshima</text>
-            <text class="map-label" x="170" y="432">Shikoku</text>
-            <text class="map-label" x="366" y="456">Ise</text>
+            <path class="atlas-route-glow" d="M578 338 C548 330 522 312 506 286 C482 248 520 206 574 180 C540 236 474 300 414 360 C382 392 362 420 322 438 C282 456 244 450 214 426 C252 402 310 396 364 418 C420 440 486 416 540 370 C584 332 612 260 724 154"/>
+            <path class="atlas-route" d="M578 338 C548 330 522 312 506 286 C482 248 520 206 574 180 C540 236 474 300 414 360 C382 392 362 420 322 438 C282 456 244 450 214 426 C252 402 310 396 364 418 C420 440 486 416 540 370 C584 332 612 260 724 154"/>
+            <path class="atlas-flight" d="M578 338 C660 302 712 242 724 154"/>
 
-            <g class="map-point"><circle cx="550" cy="332" r="15" fill="#c93030"/><text x="550" y="332">1</text></g>
-            <g class="map-point"><circle cx="484" cy="298" r="13" fill="#c93030"/><text x="484" y="298">2</text></g>
-            <g class="map-point"><circle cx="468" cy="204" r="13" fill="#c8962a"/><text x="468" y="204">3</text></g>
-            <g class="map-point"><circle cx="520" cy="116" r="13" fill="#c8962a"/><text x="520" y="116">4</text></g>
-            <g class="map-point"><circle cx="418" cy="382" r="14" fill="#6b3fa0"/><text x="418" y="382">5</text></g>
-            <g class="map-point"><circle cx="352" cy="392" r="13" fill="#6b3fa0"/><text x="352" y="392">6</text></g>
-            <g class="map-point"><circle cx="296" cy="416" r="13" fill="#2a8a7a"/><text x="296" y="416">7</text></g>
-            <g class="map-point"><circle cx="206" cy="430" r="13" fill="#2a8a7a"/><text x="206" y="430">8</text></g>
-            <g class="map-point"><circle cx="270" cy="382" r="13" fill="#2a8a7a"/><text x="270" y="382">9</text></g>
-            <g class="map-point"><circle cx="620" cy="108" r="15" fill="#3a7a4a"/><text x="620" y="108">10</text></g>
+            <rect class="atlas-card" x="596" y="316" width="184" height="58" rx="8"/>
+            <text class="atlas-label" x="620" y="340">Tokyo</text>
+            <text class="atlas-date" x="620" y="360">Sep 15-24 · Oct 20-22</text>
+
+            <rect class="atlas-card" x="378" y="322" width="200" height="58" rx="8"/>
+            <text class="atlas-label" x="398" y="346">Kyoto / Osaka</text>
+            <text class="atlas-date" x="398" y="366">Oct 3-14</text>
+
+            <rect class="atlas-card" x="92" y="390" width="190" height="58" rx="8"/>
+            <text class="atlas-label" x="112" y="414">Hiroshima + Shikoku</text>
+            <text class="atlas-date" x="112" y="434">Oct 15-18</text>
+
+            <rect class="atlas-card" x="614" y="110" width="180" height="58" rx="8"/>
+            <text class="atlas-label" x="636" y="134">Hokkaido</text>
+            <text class="atlas-date" x="636" y="154">Oct 23-29</text>
+
+            <g class="atlas-node"><circle cx="578" cy="338" r="16" fill="#c93030"/><text x="578" y="338">1</text></g>
+            <g class="atlas-node"><circle cx="506" cy="286" r="14" fill="#c93030"/><text x="506" y="286">2</text></g>
+            <g class="atlas-node"><circle cx="574" cy="180" r="14" fill="#c8962a"/><text x="574" y="180">3</text></g>
+            <g class="atlas-node"><circle cx="414" cy="360" r="15" fill="#6b3fa0"/><text x="414" y="360">4</text></g>
+            <g class="atlas-node"><circle cx="322" cy="438" r="14" fill="#6b3fa0"/><text x="322" y="438">5</text></g>
+            <g class="atlas-node"><circle cx="214" cy="426" r="14" fill="#2a8a7a"/><text x="214" y="426">6</text></g>
+            <g class="atlas-node"><circle cx="364" cy="418" r="14" fill="#2a8a7a"/><text x="364" y="418">7</text></g>
+            <g class="atlas-node"><circle cx="724" cy="154" r="16" fill="#3a7a4a"/><text x="724" y="154">8</text></g>
+
+            <text class="atlas-label" x="522" y="268">Hakone</text>
+            <text class="atlas-label" x="594" y="198">Tohoku</text>
+            <text class="atlas-label" x="340" y="454">Kōya-san / Ise</text>
           </svg>
-          <div class="map-note"><strong>Legend:</strong> 1 Tokyo, 2 Hakone, 3 Nikko, 4 Tohoku, 5 Kyoto/Osaka, 6 Kōya-san, 7 Hiroshima/Miyajima, 8 Shikoku/Naruto, 9 Ise, 10 Hokkaido. This is a reliable schematic map, not a failing live tile map.</div>
+          <div class="map-note"><strong>Legend:</strong> 1 Tokyo, 2 Hakone, 3 Tohoku/Nikko, 4 Kyoto/Osaka, 5 Kōya-san, 6 Hiroshima/Shikoku, 7 Ise and return, 8 Hokkaido. Static by design, so it stays sharp and cannot break like a tile map.</div>
         </div>
       </div>
 
